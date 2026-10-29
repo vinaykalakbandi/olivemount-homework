@@ -24,7 +24,8 @@ def get_student_credentials():
             "grade": "Grade VI - A",
             "category": "Middle School",
             "icon": "🎒",
-            "theme": "indigo"
+            "avatar": "images/sreedyuti.jpg",
+            "theme": "purple"
         })
         
     # Student 2 (Primary School)
@@ -39,7 +40,8 @@ def get_student_credentials():
             "grade": "Grade I - A",
             "category": "Primary School",
             "icon": "🎨",
-            "theme": "rose"
+            "avatar": "images/sreekriti.jpg",
+            "theme": "pink"
         })
         
     return students
@@ -171,6 +173,7 @@ def scrape_student(page, student_info):
         "grade": student_info["grade"],
         "category": student_info["category"],
         "icon": student_info["icon"],
+        "avatar": student_info.get("avatar", ""),
         "theme": student_info["theme"],
         "entries": entries
     }

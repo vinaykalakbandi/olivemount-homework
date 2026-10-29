@@ -16,7 +16,7 @@
     }
   </style>
 </head>
-<body class="bg-slate-100 min-h-screen text-slate-800 antialiased pb-16 selection:bg-indigo-500 selection:text-white">
+<body class="bg-slate-100 min-h-screen text-slate-800 antialiased pb-16 selection:bg-purple-400 selection:text-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8">
     
     <!-- Header -->
@@ -36,7 +36,7 @@
       <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/70 w-full md:w-auto text-left md:text-right">
         <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Date</p>
         <p class="text-base font-bold text-slate-800 mt-0.5" id="display-date">Thursday, October 29, 2026</p>
-        <p class="text-xs text-slate-500 mt-0.5" id="last-updated-text">Last synced: 29 Oct 2026, 10:55 PM IST</p>
+        <p class="text-xs text-slate-500 mt-0.5" id="last-updated-text">Last synced: 29 Oct 2026, 11:06 PM IST</p>
         <div class="flex items-center md:justify-end gap-1.5 mt-1.5 text-xs text-slate-500">
           <span id="sync-status-indicator" class="w-2 h-2 rounded-full bg-slate-400"></span>
           <span id="sync-status-text">Checking webhook...</span>
@@ -47,31 +47,32 @@
     <!-- Side-by-Side Grid Container -->
     <div id="students-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
       
-      <!-- ================= LEFT COLUMN CONTAINER: Sreedyuti Kalakbandi (Grade VI - A) ================= -->
-      <section id="column-sreedyuti" class="bg-indigo-50/40 border-2 border-indigo-200/90 rounded-[2.5rem] p-5 sm:p-6 shadow-sm space-y-4">
+      <!-- ================= LEFT COLUMN: Sreedyuti Kalakbandi (Pastel Shade Purple) ================= -->
+      <section id="column-sreedyuti" class="bg-purple-50/50 border-2 border-purple-200/90 rounded-[2.5rem] p-5 sm:p-6 shadow-sm space-y-4">
         
         <!-- Student Banner -->
-        <div class="bg-gradient-to-r from-indigo-700 to-indigo-600 rounded-3xl p-5 text-white shadow-sm flex items-center justify-between">
+        <div class="bg-gradient-to-r from-purple-500 via-purple-400 to-violet-400 rounded-3xl p-5 text-white shadow-sm flex items-center justify-between">
           <div class="flex items-center gap-3.5">
-            <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-2xl border border-white/20">
-              🎒
+            <!-- Caricature: 11-year-old girl with curly hair -->
+            <div class="w-14 h-14 rounded-2xl overflow-hidden border-2 border-white/60 shadow-md bg-white/20 backdrop-blur-sm flex-shrink-0 flex items-center justify-center">
+              <img src="images/sreedyuti.jpg" alt="Sreedyuti (11 yrs, curly hair)" class="student-avatar w-full h-full object-cover">
             </div>
             <div>
               <h2 class="text-lg sm:text-xl font-extrabold text-white leading-tight">Sreedyuti Kalakbandi</h2>
-              <p class="text-xs text-indigo-100 font-medium mt-0.5">ID: 20OMGS0017 • Grade VI - A</p>
+              <p class="text-xs text-purple-100 font-medium mt-0.5">ID: 20OMGS0017 • Grade VI - A</p>
             </div>
           </div>
-          <span class="text-xs font-bold px-3 py-1.5 rounded-xl bg-white/15 text-white border border-white/20 backdrop-blur-sm">
+          <span class="text-xs font-bold px-3 py-1.5 rounded-xl bg-white/20 text-white border border-white/30 backdrop-blur-sm">
             Middle School
           </span>
         </div>
 
         <div id="cards-sreedyuti" class="space-y-4">
           <!-- Fallback Card 1: ICT -->
-          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-indigo-100">
+          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-purple-100">
             <div class="flex justify-between items-start gap-3 mb-3.5">
               <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-indigo-50 text-indigo-700 mb-1">ICT</span>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-50 text-purple-700 border border-purple-200/60 mb-1">ICT</span>
                 <h3 class="text-base font-bold text-slate-900 leading-snug">Information & Communication Technology</h3>
                 <p class="text-xs text-slate-400 mt-0.5">Teacher: MADHURIMA YERRAPRAGADA</p>
               </div>
@@ -81,27 +82,27 @@
             </div>
             <label class="block bg-amber-50/70 hover:bg-amber-50/90 rounded-2xl p-4 border border-amber-200/80 mb-3 cursor-pointer transition-all">
               <div class="flex items-start gap-3">
-                <input type="checkbox" id="check-sreedyuti-ict" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" onchange="toggleHomework('sreedyuti', 'Grade VI - A', 'ICT', 'Practise all the HTML tags explained in class.', this.checked, 'badge-sreedyuti-ict')">
+                <input type="checkbox" id="check-sreedyuti-ict" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-purple-600 focus:ring-purple-500 cursor-pointer" onchange="toggleHomework('sreedyuti', 'Grade VI - A', 'ICT', 'Practise all the HTML tags explained in class.', this.checked, 'badge-sreedyuti-ict')">
                 <div class="flex-1">
                   <div class="flex items-center justify-between">
                     <span class="text-xs font-bold uppercase tracking-wider text-amber-900">Homework Task</span>
-                    <span class="text-xs font-semibold text-indigo-600">Tap to mark done</span>
+                    <span class="text-xs font-semibold text-purple-600">Tap to mark done</span>
                   </div>
                   <p class="task-text text-sm font-semibold text-amber-950 leading-relaxed mt-1">Practise all the HTML tags explained in class.</p>
                 </div>
               </div>
             </label>
-            <div class="bg-slate-50 rounded-2xl p-3.5 border border-slate-100">
+            <div class="bg-purple-50/30 rounded-2xl p-3.5 border border-purple-100/60">
               <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-0.5">Classwork Notes</p>
               <p class="text-xs text-slate-600 leading-relaxed">Revised the HTML structure and explained the use of heading (&lt;h1&gt;–&lt;h6&gt;), line break (&lt;br&gt;), horizontal line (&lt;hr&gt;), paragraph (&lt;p&gt;), bold (&lt;b&gt;), italic (&lt;i&gt;), and underline (&lt;u&gt;) tags with examples.</p>
             </div>
           </article>
 
           <!-- Fallback Card 2: English -->
-          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-indigo-100">
+          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-purple-100">
             <div class="flex justify-between items-start gap-3 mb-3.5">
               <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-50 text-purple-700 mb-1">English</span>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-50 text-purple-700 border border-purple-200/60 mb-1">English</span>
                 <h3 class="text-base font-bold text-slate-900 leading-snug">R1 - English</h3>
                 <p class="text-xs text-slate-400 mt-0.5">Teacher: ANSHA HIBA K M</p>
               </div>
@@ -111,24 +112,24 @@
             </div>
             <label class="block bg-amber-50/70 hover:bg-amber-50/90 rounded-2xl p-4 border border-amber-200/80 mb-2.5 cursor-pointer transition-all">
               <div class="flex items-start gap-3">
-                <input type="checkbox" id="check-sreedyuti-eng1" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" onchange="toggleHomework('sreedyuti', 'Grade VI - A', 'English', 'CB- pg no: 89 Life Skills Qn 1 (to be written in the CW)', this.checked, 'badge-sreedyuti-eng1')">
+                <input type="checkbox" id="check-sreedyuti-eng1" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-purple-600 focus:ring-purple-500 cursor-pointer" onchange="toggleHomework('sreedyuti', 'Grade VI - A', 'English', 'CB- pg no: 89 Life Skills Qn 1 (to be written in the CW)', this.checked, 'badge-sreedyuti-eng1')">
                 <div class="flex-1">
                   <span class="text-xs font-bold uppercase tracking-wider text-amber-900">Homework Task</span>
                   <p class="task-text text-sm font-semibold text-amber-950 leading-relaxed mt-1">CB- pg no: 89 Life Skills Qn 1 (to be written in the CW)<br><span class="text-xs text-amber-800 font-normal">GENTLE REMINDER: Start preparing for the Speaking Activity- Topic is give in the WB pg no: 69</span></p>
                 </div>
               </div>
             </label>
-            <div class="bg-slate-50 rounded-2xl p-3.5 border border-slate-100">
+            <div class="bg-purple-50/30 rounded-2xl p-3.5 border border-purple-100/60">
               <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-0.5">Classwork Notes</p>
               <p class="text-xs text-slate-600 leading-relaxed">Notes- Arunima Sinha | Grammar - Introduction- Active and Passive Voice</p>
             </div>
           </article>
 
           <!-- Fallback Card 3: Social Science -->
-          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-indigo-100">
+          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-purple-100">
             <div class="flex justify-between items-start gap-3 mb-3">
               <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-blue-50 text-blue-700 mb-1">Social Science</span>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-50 text-purple-700 border border-purple-200/60 mb-1">Social Science</span>
                 <h3 class="text-base font-bold text-slate-900 leading-snug">Social Science</h3>
                 <p class="text-xs text-slate-400 mt-0.5">Teacher: UTKARSHA SRIVASTAVA • Topic: Landforms and Life</p>
               </div>
@@ -136,7 +137,7 @@
                 Classwork Only
               </span>
             </div>
-            <div class="bg-slate-50 rounded-2xl p-3.5 border border-slate-100">
+            <div class="bg-purple-50/30 rounded-2xl p-3.5 border border-purple-100/60">
               <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-0.5">Classwork Notes</p>
               <p class="text-xs text-slate-600 leading-relaxed">Explained desert and challenges faced by people living in mountains, plains, desert etc.</p>
             </div>
@@ -145,31 +146,32 @@
 
       </section>
 
-      <!-- ================= RIGHT COLUMN CONTAINER: Sreekriti Kalakbandi (Grade I - A) ================= -->
-      <section id="column-sreekriti" class="bg-rose-50/40 border-2 border-rose-200/90 rounded-[2.5rem] p-5 sm:p-6 shadow-sm space-y-4">
+      <!-- ================= RIGHT COLUMN: Sreekriti Kalakbandi (Pastel Shade Pink) ================= -->
+      <section id="column-sreekriti" class="bg-pink-50/50 border-2 border-pink-200/90 rounded-[2.5rem] p-5 sm:p-6 shadow-sm space-y-4">
         
         <!-- Student Banner -->
-        <div class="bg-gradient-to-r from-rose-600 to-pink-600 rounded-3xl p-5 text-white shadow-sm flex items-center justify-between">
+        <div class="bg-gradient-to-r from-pink-400 via-rose-300 to-pink-300 rounded-3xl p-5 text-white shadow-sm flex items-center justify-between">
           <div class="flex items-center gap-3.5">
-            <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-2xl border border-white/20">
-              🎨
+            <!-- Caricature: 6-year-old girl with straight hair -->
+            <div class="w-14 h-14 rounded-2xl overflow-hidden border-2 border-white/60 shadow-md bg-white/20 backdrop-blur-sm flex-shrink-0 flex items-center justify-center">
+              <img src="images/sreekriti.jpg" alt="Sreekriti (6 yrs, straight hair)" class="student-avatar w-full h-full object-cover">
             </div>
             <div>
               <h2 class="text-lg sm:text-xl font-extrabold text-white leading-tight">Sreekriti Kalakbandi</h2>
-              <p class="text-xs text-rose-100 font-medium mt-0.5">ID: 23OMGS0028 • Grade I - A</p>
+              <p class="text-xs text-pink-100 font-medium mt-0.5">ID: 23OMGS0028 • Grade I - A</p>
             </div>
           </div>
-          <span class="text-xs font-bold px-3 py-1.5 rounded-xl bg-white/15 text-white border border-white/20 backdrop-blur-sm">
+          <span class="text-xs font-bold px-3 py-1.5 rounded-xl bg-white/20 text-white border border-white/30 backdrop-blur-sm">
             Primary School
           </span>
         </div>
 
         <div id="cards-sreekriti" class="space-y-4">
           <!-- Fallback Card 1: Mathematics -->
-          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-rose-100">
+          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-pink-100">
             <div class="flex justify-between items-start gap-3 mb-3.5">
               <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-rose-50 text-rose-700 mb-1">Mathematics</span>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-pink-50 text-pink-700 border border-pink-200/60 mb-1">Mathematics</span>
                 <h3 class="text-base font-bold text-slate-900 leading-snug">Mathematics</h3>
                 <p class="text-xs text-slate-400 mt-0.5">Teacher: NAKSHENDRA SONTHALIA • Topic: Lina's family</p>
               </div>
@@ -179,27 +181,27 @@
             </div>
             <label class="block bg-amber-50/70 hover:bg-amber-50/90 rounded-2xl p-4 border border-amber-200/80 mb-3 cursor-pointer transition-all">
               <div class="flex items-start gap-3">
-                <input type="checkbox" id="check-sreekriti-math" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" onchange="toggleHomework('sreekriti', 'Grade I - A', 'Mathematics', 'complete tb Pg no 79. last two bits', this.checked, 'badge-sreekriti-math')">
+                <input type="checkbox" id="check-sreekriti-math" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-pink-500 focus:ring-pink-500 cursor-pointer" onchange="toggleHomework('sreekriti', 'Grade I - A', 'Mathematics', 'complete tb Pg no 79. last two bits', this.checked, 'badge-sreekriti-math')">
                 <div class="flex-1">
                   <div class="flex items-center justify-between">
                     <span class="text-xs font-bold uppercase tracking-wider text-amber-900">Homework Task</span>
-                    <span class="text-xs font-semibold text-rose-600">Tap to mark done</span>
+                    <span class="text-xs font-semibold text-pink-600">Tap to mark done</span>
                   </div>
                   <p class="task-text text-sm font-semibold text-amber-950 leading-relaxed mt-1">complete tb Pg no 79. last two bits</p>
                 </div>
               </div>
             </label>
-            <div class="bg-slate-50 rounded-2xl p-3.5 border border-slate-100">
+            <div class="bg-pink-50/30 rounded-2xl p-3.5 border border-pink-100/60">
               <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-0.5">Classwork Notes</p>
               <p class="text-xs text-slate-600 leading-relaxed">Completed tb pg no 76-80</p>
             </div>
           </article>
 
           <!-- Fallback Card 2: English -->
-          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-rose-100">
+          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-pink-100">
             <div class="flex justify-between items-start gap-3 mb-3.5">
               <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-50 text-purple-700 mb-1">English</span>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-pink-50 text-pink-700 border border-pink-200/60 mb-1">English</span>
                 <h3 class="text-base font-bold text-slate-900 leading-snug">R1 - English</h3>
                 <p class="text-xs text-slate-400 mt-0.5">Teacher: NAKSHENDRA SONTHALIA • Topic: A visit to the Market</p>
               </div>
@@ -209,27 +211,27 @@
             </div>
             <label class="block bg-amber-50/70 hover:bg-amber-50/90 rounded-2xl p-4 border border-amber-200/80 mb-3 cursor-pointer transition-all">
               <div class="flex items-start gap-3">
-                <input type="checkbox" id="check-sreekriti-eng" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" onchange="toggleHomework('sreekriti', 'Grade I - A', 'English', 'Frame two sentences for the word explore in the notebook and complete tb Pg no 94 bit A', this.checked, 'badge-sreekriti-eng')">
+                <input type="checkbox" id="check-sreekriti-eng" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-pink-500 focus:ring-pink-500 cursor-pointer" onchange="toggleHomework('sreekriti', 'Grade I - A', 'English', 'Frame two sentences for the word explore in the notebook and complete tb Pg no 94 bit A', this.checked, 'badge-sreekriti-eng')">
                 <div class="flex-1">
                   <div class="flex items-center justify-between">
                     <span class="text-xs font-bold uppercase tracking-wider text-amber-900">Homework Task</span>
-                    <span class="text-xs font-semibold text-rose-600">Tap to mark done</span>
+                    <span class="text-xs font-semibold text-pink-600">Tap to mark done</span>
                   </div>
                   <p class="task-text text-sm font-semibold text-amber-950 leading-relaxed mt-1">Frame two sentences for the word explore in the notebook and complete tb Pg no 94 bit A</p>
                 </div>
               </div>
             </label>
-            <div class="bg-slate-50 rounded-2xl p-3.5 border border-slate-100">
+            <div class="bg-pink-50/30 rounded-2xl p-3.5 border border-pink-100/60">
               <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-0.5">Classwork Notes</p>
               <p class="text-xs text-slate-600 leading-relaxed">Completed tb Pg no93-97 and written the word explore in the notebook.</p>
             </div>
           </article>
 
           <!-- Fallback Card 3: Telugu -->
-          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-rose-100">
+          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-pink-100">
             <div class="flex justify-between items-start gap-3 mb-3.5">
               <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-teal-50 text-teal-700 mb-1">Telugu</span>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-pink-50 text-pink-700 border border-pink-200/60 mb-1">Telugu</span>
                 <h3 class="text-base font-bold text-slate-900 leading-snug">R2 - Telugu</h3>
                 <p class="text-xs text-slate-400 mt-0.5">Teacher: VIJAYA KUMARI MEDAPATI</p>
               </div>
@@ -239,17 +241,17 @@
             </div>
             <label class="block bg-amber-50/70 hover:bg-amber-50/90 rounded-2xl p-4 border border-amber-200/80 mb-3 cursor-pointer transition-all">
               <div class="flex items-start gap-3">
-                <input type="checkbox" id="check-sreekriti-tel" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" onchange="toggleHomework('sreekriti', 'Grade I - A', 'Telugu', 'ట ఠ డ ఢ ణ practice letters in Notebook', this.checked, 'badge-sreekriti-tel')">
+                <input type="checkbox" id="check-sreekriti-tel" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-pink-500 focus:ring-pink-500 cursor-pointer" onchange="toggleHomework('sreekriti', 'Grade I - A', 'Telugu', 'ట ఠ డ ఢ ణ practice letters in Notebook', this.checked, 'badge-sreekriti-tel')">
                 <div class="flex-1">
                   <div class="flex items-center justify-between">
                     <span class="text-xs font-bold uppercase tracking-wider text-amber-900">Writing Practice</span>
-                    <span class="text-xs font-semibold text-rose-600">Tap to mark done</span>
+                    <span class="text-xs font-semibold text-pink-600">Tap to mark done</span>
                   </div>
                   <p class="task-text text-sm font-semibold text-amber-950 leading-relaxed mt-1">ట ఠ డ ఢ ణ practice letters in Notebook</p>
                 </div>
               </div>
             </label>
-            <div class="bg-slate-50 rounded-2xl p-3.5 border border-slate-100">
+            <div class="bg-pink-50/30 rounded-2xl p-3.5 border border-pink-100/60">
               <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-0.5">Classwork Notes</p>
               <p class="text-xs text-slate-600 leading-relaxed">ట, ఠ, డ, ఢ, ణ letters Reading and writing done in notebook.</p>
             </div>
@@ -353,13 +355,19 @@
         const subjectKeys = Object.keys(grouped);
         if (subjectKeys.length === 0) return;
 
+        // Determine theme styles
+        const isPink = student.theme === 'pink' || student.key === 'sreekriti';
+        const borderStyle = isPink ? 'border-pink-100' : 'border-purple-100';
+        const badgeColor = isPink ? 'bg-pink-50 text-pink-700 border border-pink-200/60' : 'bg-purple-50 text-purple-700 border border-purple-200/60';
+        const tapColor = isPink ? 'text-pink-600' : 'text-purple-600';
+        const checkColor = isPink ? 'text-pink-500 focus:ring-pink-500' : 'text-purple-600 focus:ring-purple-500';
+        const cwBg = isPink ? 'bg-pink-50/30 border-pink-100/60' : 'bg-purple-50/30 border-purple-100/60';
+
         let html = '';
         subjectKeys.forEach((subjKey, sIdx) => {
           const item = grouped[subjKey];
           const hasHw = item.homework.length > 0;
           const badgeId = `badge-${student.key}-${sIdx}`;
-          const borderStyle = student.theme === 'rose' ? 'border-rose-100' : 'border-indigo-100';
-          const badgeColor = student.theme === 'rose' ? 'bg-rose-50 text-rose-700' : 'bg-indigo-50 text-indigo-700';
 
           html += `
           <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm ${borderStyle}">
@@ -384,12 +392,11 @@
               const taskAttr = escapeQuotes(hw.description.replace(/\n/g, ' '));
               const subjAttr = escapeQuotes(item.subject);
               const gradeAttr = escapeQuotes(student.grade);
-              const tapColor = student.theme === 'rose' ? 'text-rose-600' : 'text-indigo-600';
 
               html += `
               <label class="block bg-amber-50/70 hover:bg-amber-50/90 rounded-2xl p-4 border border-amber-200/80 mb-3 cursor-pointer transition-all">
                 <div class="flex items-start gap-3">
-                  <input type="checkbox" id="${checkId}" data-badge-id="${badgeId}" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" onchange="toggleHomework('${student.key}', '${gradeAttr}', '${subjAttr}', '${taskAttr}', this.checked, '${badgeId}')">
+                  <input type="checkbox" id="${checkId}" data-badge-id="${badgeId}" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 ${checkColor} cursor-pointer" onchange="toggleHomework('${student.key}', '${gradeAttr}', '${subjAttr}', '${taskAttr}', this.checked, '${badgeId}')">
                   <div class="flex-1">
                     <div class="flex items-center justify-between">
                       <span class="text-xs font-bold uppercase tracking-wider text-amber-900">Homework Task</span>
@@ -406,7 +413,7 @@
 
           // Classwork notes
           if (item.classwork.length > 0) {
-            html += `<div class="bg-slate-50 rounded-2xl p-3.5 border border-slate-100 space-y-2">`;
+            html += `<div class="${cwBg} rounded-2xl p-3.5 border space-y-2">`;
             item.classwork.forEach(cw => {
               const cwDesc = escapeHtml(cw.description).replace(/\n/g, '<br>');
               html += `

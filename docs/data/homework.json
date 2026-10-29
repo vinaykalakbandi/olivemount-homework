@@ -10,7 +10,7 @@
       "grade": "Grade VI - A",
       "category": "Middle School",
       "icon": "🎒",
-      "theme": "indigo",
+      "theme": "purple",
       "entries": [
         {
           "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
@@ -52,7 +52,8 @@
           "description": "Explained desert and challenges faced by people living in mountains, plains, desert etc.",
           "created_at": "02:27 PM"
         }
-      ]
+      ],
+      "avatar": "images/sreedyuti.jpg"
     },
     {
       "key": "sreekriti",
@@ -61,7 +62,7 @@
       "grade": "Grade I - A",
       "category": "Primary School",
       "icon": "🎨",
-      "theme": "rose",
+      "theme": "pink",
       "entries": [
         {
           "subject": "General",
@@ -127,7 +128,8 @@
           "description": "ట ఠ డ ఢ ణ practice letters in Notebook",
           "created_at": "02:54 PM"
         }
-      ]
+      ],
+      "avatar": "images/sreekriti.jpg"
     }
   ]
 }
