@@ -1,0 +1,133 @@
+{
+  "date": "Thursday, October 29, 2026",
+  "date_iso": "2026-10-29",
+  "last_updated": "29 Oct 2026, 10:55 PM IST",
+  "students": [
+    {
+      "key": "sreedyuti",
+      "student_id": "20OMGS0017",
+      "name": "Sreedyuti Kalakbandi",
+      "grade": "Grade VI - A",
+      "category": "Middle School",
+      "icon": "🎒",
+      "theme": "indigo",
+      "entries": [
+        {
+          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
+          "type": "Classwork",
+          "teacher": "MADHURIMA YERRAPRAGADA",
+          "topic": "",
+          "description": "Revised the HTML structure and explained the use of heading (<h1>–<h6>), line break (<br>), horizontal line (<hr>), paragraph (<p>), bold (<b>), italic (<i>), and underline (<u>) tags with examples.",
+          "created_at": "03:48 PM"
+        },
+        {
+          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
+          "type": "Homework",
+          "teacher": "MADHURIMA YERRAPRAGADA",
+          "topic": "",
+          "description": "Practise all the HTML tags explained in class.",
+          "created_at": "03:48 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "",
+          "description": "Notes- Arunima Sinha\nGrammar - Introduction- Active and Passive Voice",
+          "created_at": "03:38 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Homework",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "",
+          "description": "CB- pg no: 89 Life Skills Qn 1 (to be written in the CW)\nGENTLE REMINDER:\nStart preparing for the Speaking Activity- Topic is give in the WB pg no: 69",
+          "created_at": "03:38 PM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Classwork",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "Landforms and Life",
+          "description": "Explained desert and challenges faced by people living in mountains, plains, desert etc.",
+          "created_at": "02:27 PM"
+        }
+      ]
+    },
+    {
+      "key": "sreekriti",
+      "student_id": "23OMGS0028",
+      "name": "Sreekriti Kalakbandi",
+      "grade": "Grade I - A",
+      "category": "Primary School",
+      "icon": "🎨",
+      "theme": "rose",
+      "entries": [
+        {
+          "subject": "General",
+          "type": "Homework",
+          "teacher": "RASHMI NOWLAKHA",
+          "topic": "Hindi",
+          "description": "Hindi - Class work- Workbook Page number 6,7 done.",
+          "created_at": "03:39 PM"
+        },
+        {
+          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
+          "type": "Classwork",
+          "teacher": "VIMALA V",
+          "topic": "Ch-6: Brain Games",
+          "description": "Students discussed and completed the textbook activities related to patterns, spot the difference, and directions.",
+          "created_at": "03:45 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Lina's family",
+          "description": "Completed tb pg no 76-80",
+          "created_at": "02:13 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Homework",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Lina's family",
+          "description": "complete tb Pg no 79. last two bits",
+          "created_at": "02:13 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "A visit to the Market",
+          "description": "Completed tb Pg no93-97 and written the word explore in the notebook.",
+          "created_at": "02:03 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Homework",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "A visit to the Market",
+          "description": "Frame two sentences for the word explore in the notebook and complete tb Pg no 94 bit A",
+          "created_at": "02:03 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu",
+          "description": "ట, ఠ, డ, ఢ, ణ letters Reading and writing done in notebook.",
+          "created_at": "02:54 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Homework",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu",
+          "description": "ట ఠ డ ఢ ణ practice letters in Notebook",
+          "created_at": "02:54 PM"
+        }
+      ]
+    }
+  ]
+}

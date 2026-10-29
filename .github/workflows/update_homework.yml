@@ -1,0 +1,46 @@
+name: Daily Homework Sync
+
+on:
+  schedule:
+    # Runs everyday at 12:30 UTC = 18:00 IST (6:00 PM IST)
+    - cron: '30 12 * * *'
+  workflow_dispatch: # Allows manual run button from GitHub anytime
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  update-homework:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install chromium --with-deps
+
+      - name: Fetch Homework from MyClassBoard
+        env:
+          MCB_USER_1: ${{ secrets.MCB_USER_1 }}
+          MCB_PASS_1: ${{ secrets.MCB_PASS_1 }}
+          MCB_USER_2: ${{ secrets.MCB_USER_2 }}
+          MCB_PASS_2: ${{ secrets.MCB_PASS_2 }}
+        run: |
+          python src/fetch_homework.py
+
+      - name: Commit and Push Updated Dashboard
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(sync): update homework for $(date '+%Y-%m-%d')" && git push)
