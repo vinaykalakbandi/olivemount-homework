@@ -160,9 +160,23 @@ function refreshSheetWithTasks(tasks, defaultDate) {
   return rowsToAdd.length;
 }
 
-// 1. GET: Returns current completion statuses for cross-device sync
+// 1. GET: Returns current completion statuses for cross-device sync OR triggers scraper
 function doGet(e) {
   var params = e ? e.parameter : {};
+  var callback = params.callback;
+
+  // On-Demand Scraper Trigger from Webpage Button
+  if (params.action === "triggerSync") {
+    var triggerResult = triggerGitHubScraper();
+    var triggerJson = JSON.stringify(triggerResult);
+    if (callback) {
+      return ContentService.createTextOutput(callback + "(" + triggerJson + ");")
+        .setMimeType(ContentService.MimeType.JAVASCRIPT);
+    }
+    return ContentService.createTextOutput(triggerJson)
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   var rows = sheet.getDataRange().getValues();
   
@@ -191,7 +205,6 @@ function doGet(e) {
     };
   }
   
-  var callback = params.callback;
   var jsonString = JSON.stringify({ success: true, tasks: statusMap });
   
   if (callback) {
@@ -201,6 +214,47 @@ function doGet(e) {
   
   return ContentService.createTextOutput(jsonString)
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+/**
+ * Dispatches the GitHub Actions daily homework sync scraper workflow.
+ * Set GH_TOKEN in Project Settings > Script Properties > GH_TOKEN
+ */
+function triggerGitHubScraper() {
+  var cache = CacheService.getScriptCache();
+  if (cache.get("SCRAPER_COOLDOWN")) {
+    return {
+      success: false,
+      message: "A sync was already started in the last 2 minutes. Please wait for it to finish!"
+    };
+  }
+  cache.put("SCRAPER_COOLDOWN", "true", 120);
+
+  var token = PropertiesService.getScriptProperties().getProperty("GH_TOKEN") || "YOUR_GITHUB_TOKEN";
+  var url = "https://api.github.com/repos/vinaykalakbandi/olivemount-homework/actions/workflows/update_homework.yml/dispatches";
+  
+  var options = {
+    method: "post",
+    headers: {
+      "Authorization": "Bearer " + token,
+      "Accept": "application/vnd.github+json",
+      "User-Agent": "Olivemount-Homework-Dashboard"
+    },
+    payload: JSON.stringify({ ref: "main" }),
+    muteHttpExceptions: true
+  };
+
+  try {
+    var response = UrlFetchApp.fetch(url, options);
+    var code = response.getResponseCode();
+    if (code === 204 || code === 200) {
+      return { success: true, message: "Scraper workflow dispatched successfully!" };
+    } else {
+      return { success: false, message: "GitHub API returned " + code + ": " + response.getContentText() };
+    }
+  } catch (err) {
+    return { success: false, message: "Request error: " + err.toString() };
+  }
 }
 
 // 2. POST: In-place update ONLY. Never adds new rows!
