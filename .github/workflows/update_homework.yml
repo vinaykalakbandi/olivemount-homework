@@ -2,13 +2,13 @@ name: Daily Homework Sync
 
 on:
   schedule:
-    # Multiple cron intervals to guard against GitHub runner queue delays
-    # 12:35 UTC = 6:05 PM IST (Mon-Fri)
-    - cron: '35 12 * * 1-5'
-    # 13:05 UTC = 6:35 PM IST backup check
-    - cron: '5 13 * * 1-5'
-    # 13:35 UTC = 7:05 PM IST evening catch-up
-    - cron: '35 13 * * 1-5'
+    # 3 checkpoints between 5:00 PM and 6:00 PM IST (Mon-Fri) on off-peak minutes
+    # 11:40 UTC = 5:10 PM IST (early check as kids sit down to study)
+    - cron: '40 11 * * 1-5'
+    # 12:05 UTC = 5:35 PM IST (mid checkpoint for late teacher posts)
+    - cron: '5 12 * * 1-5'
+    # 12:25 UTC = 5:55 PM IST (final evening checkpoint before 6:00 PM)
+    - cron: '25 12 * * 1-5'
   workflow_dispatch: # Allows manual run button anytime
 
 permissions:
