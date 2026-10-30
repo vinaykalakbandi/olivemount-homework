@@ -249,7 +249,7 @@ def main():
             print(f"Refreshing Google Sheet with {len(hw_tasks)} current homework tasks...")
             req = urllib.request.Request(
                 webhook_url,
-                data=json.dumps({"action": "refreshSheet", "date": payload.get("date_iso", ""), "tasks": hw_tasks}).encode("utf-8"),
+                data=json.dumps({"action": "syncTasks", "date": payload.get("date_iso", ""), "tasks": hw_tasks}).encode("utf-8"),
                 headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"}
             )
             with urllib.request.urlopen(req, timeout=20) as resp:

@@ -1,10 +1,32 @@
 /**
- * Olivemount Homework Tracker - Complete Apps Script Engine
- * 1. refreshCurrentHomeworkSheet(): Clears sheet, formats headers, and writes current homework tasks.
+ * Olivemount Homework Tracker - Ongoing Historical Log & Two-Way Sync Engine
+ * 1. syncHomeworkTasks(): Appends new tasks without duplicates. NEVER deletes historical records!
  * 2. doGet(): Returns live task statuses for cross-device sync OR triggers GitHub Actions scraper workflow.
- * 3. doPost(): Updates Status and Timestamp in-place. NEVER adds duplicate rows!
+ * 3. doPost(): Updates Status and Timestamp in-place. NEVER duplicates rows!
  * 4. triggerGitHubScraper(): Dispatches the GitHub Actions Playwright scraper workflow on demand.
  */
+
+// Helper to normalize dates (handles Date objects, ISO strings, etc.)
+function normalizeDateString(val) {
+  if (!val) return "";
+  if (val instanceof Date) {
+    var y = val.getFullYear();
+    var m = ("0" + (val.getMonth() + 1)).slice(-2);
+    var d = ("0" + val.getDate()).slice(-2);
+    return y + "-" + m + "-" + d;
+  }
+  var str = String(val).trim();
+  var match = str.match(/\d{4}-\d{2}-\d{2}/);
+  if (match) return match[0];
+  var parsed = new Date(str);
+  if (!isNaN(parsed.getTime())) {
+    var py = parsed.getFullYear();
+    var pm = ("0" + (parsed.getMonth() + 1)).slice(-2);
+    var pd = ("0" + parsed.getDate()).slice(-2);
+    return py + "-" + pm + "-" + pd;
+  }
+  return str.toLowerCase();
+}
 
 // Helper to sanitize strings (supports Telugu Unicode, removes punctuation)
 function cleanString(str) {
@@ -16,65 +38,71 @@ function cleanString(str) {
     .trim();
 }
 
-// Fallback initial task loader
-function refreshCurrentHomeworkSheet() {
-  var defaultTasks = [
-    {
-      date: "2026-10-30",
-      student: "Sreedyuti Kalakbandi",
-      grade: "Grade VI - A",
-      subject: "MATHEMATICS",
-      task: "Perimeter and area pg 138 figure it out 3rd problem. Cut the tangram at the end of the text book. Cut the triangles and quadrilaterals seperately. Bring A4 sheet and glue."
-    },
-    {
-      date: "2026-10-30",
-      student: "Sreedyuti Kalakbandi",
-      grade: "Grade VI - A",
-      subject: "SOCIAL SCIENCE",
-      task: "Dear Students, A written quiz will be conducted on Monday, 2 November 2026, on the topic 'E-Waste Management.' Kindly prepare well. All the best!"
-    }
-  ];
-  return refreshSheetWithTasks(defaultTasks, "2026-10-30");
-}
-
-function refreshSheetWithTasks(tasks, defaultDate) {
+/**
+ * Appends new tasks to the ongoing log if not already present.
+ * NEVER deletes or clears existing days!
+ */
+function syncHomeworkTasks(tasks, defaultDate) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  sheet.clear(); // Clear all old rows
-  
-  // Clean headers
+  var lastRow = sheet.getLastRow();
   var headers = ["Date", "Student", "Grade", "Subject", "Homework Task", "Status", "Completed At"];
-  sheet.appendRow(headers);
   
-  var headerRange = sheet.getRange(1, 1, 1, headers.length);
-  headerRange.setFontWeight("bold");
-  headerRange.setBackground("#EDE9FE"); // Soft pastel purple header
-  headerRange.setFontColor("#3730A3");
-  sheet.setFrozenRows(1);
-  
-  var rowsToAdd = [];
-  for (var i = 0; i < tasks.length; i++) {
-    var t = tasks[i];
-    rowsToAdd.push([
-      t.date || defaultDate || new Date().toISOString().split("T")[0],
-      t.student,
-      t.grade || "",
-      t.subject || "",
-      t.task,
-      t.status || "Pending",
-      t.timestamp || ""
-    ]);
+  if (lastRow === 0) {
+    sheet.appendRow(headers);
+    var headerRange = sheet.getRange(1, 1, 1, headers.length);
+    headerRange.setFontWeight("bold");
+    headerRange.setBackground("#EDE9FE");
+    headerRange.setFontColor("#3730A3");
+    sheet.setFrozenRows(1);
+    lastRow = 1;
   }
   
-  if (rowsToAdd.length > 0) {
-    sheet.getRange(2, 1, rowsToAdd.length, headers.length).setValues(rowsToAdd);
-    sheet.getRange(2, 6, rowsToAdd.length, 1).setHorizontalAlignment("center");
+  // Read existing rows to check for duplicates
+  var existingData = (lastRow > 1) ? sheet.getRange(2, 1, lastRow - 1, headers.length).getValues() : [];
+  var existingKeys = {};
+  
+  for (var i = 0; i < existingData.length; i++) {
+    var r = existingData[i];
+    var rDate = normalizeDateString(r[0]);
+    var rStudent = cleanString(r[1]);
+    var rTask = cleanString(r[4]);
+    var key = rDate + "::" + rStudent + "::" + rTask;
+    existingKeys[key] = true;
   }
   
-  for (var col = 1; col <= headers.length; col++) {
-    sheet.autoResizeColumn(col);
+  var rowsToAppend = [];
+  for (var j = 0; j < tasks.length; j++) {
+    var t = tasks[j];
+    var taskDate = normalizeDateString(t.date || defaultDate || new Date());
+    var taskStudent = cleanString(t.student);
+    var taskText = cleanString(t.task);
+    var taskKey = taskDate + "::" + taskStudent + "::" + taskText;
+    
+    // Only append if this exact task on this exact date does not already exist
+    if (!existingKeys[taskKey]) {
+      rowsToAppend.push([
+        taskDate,
+        t.student,
+        t.grade || "",
+        t.subject || "",
+        t.task,
+        t.status || "Pending",
+        t.timestamp || ""
+      ]);
+      existingKeys[taskKey] = true;
+    }
   }
   
-  return rowsToAdd.length;
+  if (rowsToAppend.length > 0) {
+    var startRow = sheet.getLastRow() + 1;
+    sheet.getRange(startRow, 1, rowsToAppend.length, headers.length).setValues(rowsToAppend);
+    sheet.getRange(startRow, 6, rowsToAppend.length, 1).setHorizontalAlignment("center");
+    for (var col = 1; col <= headers.length; col++) {
+      sheet.autoResizeColumn(col);
+    }
+  }
+  
+  return rowsToAppend.length;
 }
 
 // 1. GET: Returns current completion statuses for cross-device sync OR triggers scraper
@@ -96,30 +124,48 @@ function doGet(e) {
 
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   var rows = sheet.getDataRange().getValues();
-  
-  if (rows.length <= 1) {
-    refreshCurrentHomeworkSheet();
-    rows = sheet.getDataRange().getValues();
-  }
-  
+  var targetDate = normalizeDateString(params.date || "");
   var statusMap = {};
   
   for (var i = 1; i < rows.length; i++) {
     var r = rows[i];
+    var rowDate = normalizeDateString(r[0]);
     var student = String(r[1] || "").trim();
     var task = String(r[4] || "").trim();
     var status = String(r[5] || "").trim();
     var timestamp = String(r[6] || "").trim();
     
     if (!student || !task) continue;
+    if (targetDate && rowDate !== targetDate) continue;
     
     var key = cleanString(student) + "::" + cleanString(task);
     statusMap[key] = {
+      date: rowDate,
       student: student,
       task: task,
       status: status || "Pending",
       timestamp: timestamp
     };
+  }
+  
+  // If target date yielded no rows, fall back to returning recent rows
+  if (targetDate && Object.keys(statusMap).length === 0) {
+    for (var i = 1; i < rows.length; i++) {
+      var r = rows[i];
+      var student = String(r[1] || "").trim();
+      var task = String(r[4] || "").trim();
+      var status = String(r[5] || "").trim();
+      var timestamp = String(r[6] || "").trim();
+      if (!student || !task) continue;
+      var key = cleanString(student) + "::" + cleanString(task);
+      statusMap[key] = {
+        date: normalizeDateString(r[0]),
+        student: student,
+        task: task,
+        status: status || "Pending",
+        timestamp: timestamp
+      };
+    }
   }
   
   var jsonString = JSON.stringify({ success: true, tasks: statusMap });
@@ -176,39 +222,55 @@ function triggerGitHubScraper() {
 
 // 2. POST: In-place update ONLY. Never adds duplicate rows!
 function doPost(e) {
-  // If run manually from Apps Script editor via Run button
   if (!e || !e.postData || !e.postData.contents) {
-    var count = refreshCurrentHomeworkSheet();
-    return ContentService.createTextOutput(JSON.stringify({ success: true, count: count }))
+    return ContentService.createTextOutput(JSON.stringify({ success: true, message: "No post data received" }))
       .setMimeType(ContentService.MimeType.JSON);
   }
 
   var data = JSON.parse(e.postData.contents);
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   
-  // Called by daily scraper script to refresh current active tasks
-  if (data.action === "refreshSheet" && data.tasks) {
-    var count = refreshSheetWithTasks(data.tasks, data.date);
-    return ContentService.createTextOutput(JSON.stringify({ success: true, count: count }))
+  // Scraper append / sync request
+  if ((data.action === "syncTasks" || data.action === "refreshSheet") && data.tasks) {
+    var count = syncHomeworkTasks(data.tasks, data.date);
+    return ContentService.createTextOutput(JSON.stringify({ success: true, addedCount: count }))
       .setMimeType(ContentService.MimeType.JSON);
   }
   
+  // Checkbox toggle: In-place update ONLY
   var rows = sheet.getDataRange().getValues();
+  var targetDate = normalizeDateString(data.date || "");
   var targetStudent = cleanString(data.student);
   var targetTask = cleanString(data.task);
   
   var matchedRowIndex = -1;
   
-  for (var i = 1; i < rows.length; i++) {
+  // Search from bottom up (newest entries first)
+  for (var i = rows.length - 1; i >= 1; i--) {
+    var rowDate = normalizeDateString(rows[i][0]);
     var studentInSheet = cleanString(rows[i][1]);
     var taskInSheet = cleanString(rows[i][4]);
     
     var isStudentMatch = (studentInSheet === targetStudent || studentInSheet.indexOf(targetStudent) !== -1 || targetStudent.indexOf(studentInSheet) !== -1);
     var isTaskMatch = (taskInSheet === targetTask || taskInSheet.indexOf(targetTask) !== -1 || targetTask.indexOf(taskInSheet) !== -1);
+    var isDateMatch = (!targetDate || rowDate === targetDate);
     
-    if (isStudentMatch && isTaskMatch) {
+    if (isStudentMatch && isTaskMatch && isDateMatch) {
       matchedRowIndex = i + 1; // 1-based row index in sheet
       break;
+    }
+  }
+  
+  // Fallback match without date if date format differed
+  if (matchedRowIndex === -1) {
+    for (var i = rows.length - 1; i >= 1; i--) {
+      var studentInSheet = cleanString(rows[i][1]);
+      var taskInSheet = cleanString(rows[i][4]);
+      if ((studentInSheet === targetStudent || studentInSheet.indexOf(targetStudent) !== -1 || targetStudent.indexOf(studentInSheet) !== -1) &&
+          (taskInSheet === targetTask || taskInSheet.indexOf(targetTask) !== -1 || targetTask.indexOf(taskInSheet) !== -1)) {
+        matchedRowIndex = i + 1;
+        break;
+      }
     }
   }
   
@@ -223,7 +285,6 @@ function doPost(e) {
       .setMimeType(ContentService.MimeType.JSON);
   }
   
-  // NEVER ADD NEW ROWS!
   return ContentService.createTextOutput(JSON.stringify({ success: false, message: "Row not found. No rows added." }))
     .setMimeType(ContentService.MimeType.JSON);
 }
