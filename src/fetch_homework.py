@@ -234,12 +234,24 @@ def main():
     for st in results:
         for entry in st.get("entries", []):
             if entry.get("type") == "Homework":
+                desc = entry.get("description", "").replace("\n", " ").strip()
+                lower_desc = desc.lower()
+                # Skip teacher notes mislabeled as Homework that are purely classwork updates (e.g. "Class work... done")
+                is_cw_only = (
+                    ("class work" in lower_desc or "classwork" in lower_desc or "cw" in lower_desc)
+                    and "done" in lower_desc
+                    and "homework" not in lower_desc
+                    and "hw" not in lower_desc
+                )
+                if is_cw_only:
+                    print(f"Skipping informational classwork note from Google Sheet: {desc}")
+                    continue
                 hw_tasks.append({
                     "date": payload.get("date_iso", ""),
                     "student": st["name"],
                     "grade": st["grade"],
                     "subject": entry["subject"],
-                    "task": entry["description"].replace("\n", " ").strip(),
+                    "task": desc,
                     "status": "Pending",
                     "timestamp": ""
                 })

@@ -76,6 +76,14 @@ function syncHomeworkTasks(tasks, defaultDate) {
     var taskDate = normalizeDateString(t.date || defaultDate || new Date());
     var taskStudent = cleanString(t.student);
     var taskText = cleanString(t.task);
+    var lowerTask = taskText.toLowerCase();
+
+    // Strictly homework only: skip informational classwork notes (e.g. "Class work ... done")
+    if ((lowerTask.indexOf("class work") !== -1 || lowerTask.indexOf("classwork") !== -1 || lowerTask.indexOf("cw") !== -1) && 
+        lowerTask.indexOf("done") !== -1 && lowerTask.indexOf("homework") === -1 && lowerTask.indexOf("hw") === -1) {
+      continue;
+    }
+
     var taskKey = taskDate + "::" + taskStudent + "::" + taskText;
     
     // Only append if this exact task on this exact date does not already exist
