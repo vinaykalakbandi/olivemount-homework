@@ -13,8 +13,8 @@ def get_student_credentials():
     students = []
     
     # Student 1 (Middle School)
-    u1 = os.environ.get("MCB_USER_1") or os.environ.get("MCB_USERNAME") or "20OMGS0017"
-    p1 = os.environ.get("MCB_PASS_1") or os.environ.get("MCB_PASSWORD") or "20OMGS0017"
+    u1 = os.environ.get("MCB_USER_1") or os.environ.get("MCB_USERNAME")
+    p1 = os.environ.get("MCB_PASS_1") or os.environ.get("MCB_PASSWORD")
     if u1 and p1:
         students.append({
             "key": "sreedyuti",
@@ -27,10 +27,12 @@ def get_student_credentials():
             "avatar": "images/sreedyuti.jpg",
             "theme": "purple"
         })
+    else:
+        print("Notice: MCB_USER_1 and/or MCB_PASS_1 environment variables not set.")
         
     # Student 2 (Primary School)
-    u2 = os.environ.get("MCB_USER_2") or "23OMGS0028"
-    p2 = os.environ.get("MCB_PASS_2") or "23OMGS0028"
+    u2 = os.environ.get("MCB_USER_2")
+    p2 = os.environ.get("MCB_PASS_2")
     if u2 and p2:
         students.append({
             "key": "sreekriti",
@@ -43,6 +45,8 @@ def get_student_credentials():
             "avatar": "images/sreekriti.jpg",
             "theme": "pink"
         })
+    else:
+        print("Notice: MCB_USER_2 and/or MCB_PASS_2 environment variables not set.")
         
     return students
 
@@ -168,7 +172,6 @@ def scrape_student(page, student_info):
 
     return {
         "key": student_info["key"],
-        "student_id": student_info["id"],
         "name": student_info["name"],
         "grade": student_info["grade"],
         "category": student_info["category"],
@@ -201,11 +204,11 @@ def main():
                 print(f"Error scraping {st['name']}: {ex}")
                 results.append({
                     "key": st["key"],
-                    "student_id": st["id"],
                     "name": st["name"],
                     "grade": st["grade"],
                     "category": st["category"],
                     "icon": st["icon"],
+                    "avatar": st.get("avatar", ""),
                     "theme": st["theme"],
                     "entries": []
                 })

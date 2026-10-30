@@ -27,10 +27,10 @@ git push -u origin main
 In your GitHub repository:
 1. Go to **Settings** → **Secrets and variables** → **Actions**.
 2. Under **Repository secrets**, click **New repository secret** and add:
-   - `MCB_USER_1`: `20OMGS0017` *(Sreedyuti)*
-   - `MCB_PASS_1`: `20OMGS0017`
-   - `MCB_USER_2`: `23OMGS0028` *(Sreekriti)*
-   - `MCB_PASS_2`: `23OMGS0028`
+   - `MCB_USER_1`: `<Student 1 Portal ID>` *(Sreedyuti)*
+   - `MCB_PASS_1`: `<Student 1 Portal Password>`
+   - `MCB_USER_2`: `<Student 2 Portal ID>` *(Sreekriti)*
+   - `MCB_PASS_2`: `<Student 2 Portal Password>`
 
 ### 4. Enable GitHub Pages & Permissions
 1. Under **Settings** → **Actions** → **General**:
@@ -51,25 +51,98 @@ Open your Google Sheet: [Olivemount Daily Homework Tracker](https://docs.google.
 
 ### Step 2: Open Apps Script
 1. Inside the Google Sheet, click **Extensions** → **Apps Script**.
-2. Replace whatever is in the editor with this 12-line script:
+2. Replace whatever is in the editor with this two-way sync script:
 
 ```javascript
+// 1. GET: Returns current completion statuses for cross-device sync
+function doGet(e) {
+  var params = e ? e.parameter : {};
+  var targetDate = params.date || "";
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var rows = sheet.getDataRange().getValues();
+  
+  var statusMap = {};
+  
+  // Columns: Date (0), Student (1), Grade (2), Subject (3), Task (4), Status (5), Timestamp (6)
+  for (var i = 1; i < rows.length; i++) {
+    var r = rows[i];
+    var rowDate = String(r[0] || "").trim();
+    var student = String(r[1] || "").trim();
+    var task = String(r[4] || "").trim();
+    var status = String(r[5] || "").trim();
+    var timestamp = String(r[6] || "").trim();
+    
+    if (!student || !task) continue;
+    
+    var dateMatches = (!targetDate || rowDate === targetDate || rowDate.indexOf(targetDate) !== -1 || targetDate.indexOf(rowDate) !== -1);
+    if (dateMatches) {
+      var key = (student + "::" + task).toLowerCase();
+      statusMap[key] = {
+        student: student,
+        task: task,
+        status: status,
+        timestamp: timestamp
+      };
+    }
+  }
+  
+  var callback = params.callback;
+  var jsonString = JSON.stringify({ success: true, tasks: statusMap });
+  
+  // JSONP support for universal cross-origin device support
+  if (callback) {
+    return ContentService.createTextOutput(callback + "(" + jsonString + ");")
+      .setMimeType(ContentService.MimeType.JAVASCRIPT);
+  }
+  
+  return ContentService.createTextOutput(jsonString)
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+// 2. POST: Updates existing row in-place (no duplicates!) or appends new row
 function doPost(e) {
   var data = JSON.parse(e.postData.contents);
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var rows = sheet.getDataRange().getValues();
   
-  // Appends: Date, Student Name, Grade, Subject, Homework Task, Status, Completed At
-  sheet.appendRow([
-    data.date,
-    data.student,
-    data.grade,
-    data.subject,
-    data.task,
-    data.status,
-    data.timestamp
-  ]);
+  var targetDate = String(data.date || "").trim();
+  var targetStudent = String(data.student || "").trim().toLowerCase();
+  var targetTask = String(data.task || "").trim().toLowerCase();
   
-  return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
+  var matchedRowIndex = -1;
+  
+  for (var i = 1; i < rows.length; i++) {
+    var r = rows[i];
+    var rowDate = String(r[0] || "").trim();
+    var student = String(r[1] || "").trim().toLowerCase();
+    var task = String(r[4] || "").trim().toLowerCase();
+    
+    var dateMatches = (!targetDate || rowDate === targetDate || rowDate.indexOf(targetDate) !== -1 || targetDate.indexOf(rowDate) !== -1);
+    if (dateMatches && student === targetStudent && task === targetTask) {
+      matchedRowIndex = i + 1; // 1-based index
+      break;
+    }
+  }
+  
+  if (matchedRowIndex > 0) {
+    // Update existing row in place: Status (Col 6), Timestamp (Col 7)
+    sheet.getRange(matchedRowIndex, 6).setValue(data.status);
+    sheet.getRange(matchedRowIndex, 7).setValue(data.timestamp);
+  } else {
+    // Append new row if not present
+    sheet.appendRow([
+      data.date,
+      data.student,
+      data.grade,
+      data.subject,
+      data.task,
+      data.status,
+      data.timestamp
+    ]);
+  }
+  
+  return ContentService.createTextOutput(JSON.stringify({ success: true, updatedRow: matchedRowIndex }))
+    .setMimeType(ContentService.MimeType.JSON);
 }
 ```
 

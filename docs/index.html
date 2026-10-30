@@ -37,9 +37,12 @@
         <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Date</p>
         <p class="text-base font-bold text-slate-800 mt-0.5" id="display-date">Thursday, October 29, 2026</p>
         <p class="text-xs text-slate-500 mt-0.5" id="last-updated-text">Last synced: 29 Oct 2026, 11:06 PM IST</p>
-        <div class="flex items-center md:justify-end gap-1.5 mt-1.5 text-xs text-slate-500">
+        <div class="flex items-center md:justify-end gap-2 mt-1.5 text-xs text-slate-500">
           <span id="sync-status-indicator" class="w-2 h-2 rounded-full bg-slate-400"></span>
-          <span id="sync-status-text">Checking webhook...</span>
+          <span id="sync-status-text">Checking sheet...</span>
+          <button onclick="fetchTasksFromSheet(true)" title="Force refresh status from Google Sheet" class="text-[11px] font-medium px-2 py-0.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-slate-600 transition-all flex items-center gap-1">
+            <span>🔄</span> Sync
+          </button>
         </div>
       </div>
     </header>
@@ -59,7 +62,7 @@
             </div>
             <div>
               <h2 class="text-lg sm:text-xl font-extrabold text-white leading-tight">Sreedyuti Kalakbandi</h2>
-              <p class="text-xs text-purple-100 font-medium mt-0.5">ID: 20OMGS0017 • Grade VI - A</p>
+              <p class="text-xs text-purple-100 font-medium mt-0.5">Grade VI - A • Middle School</p>
             </div>
           </div>
           <span class="text-xs font-bold px-3 py-1.5 rounded-xl bg-white/20 text-white border border-white/30 backdrop-blur-sm">
@@ -68,80 +71,7 @@
         </div>
 
         <div id="cards-sreedyuti" class="space-y-4">
-          <!-- Fallback Card 1: ICT -->
-          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-purple-100">
-            <div class="flex justify-between items-start gap-3 mb-3.5">
-              <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-50 text-purple-700 border border-purple-200/60 mb-1">ICT</span>
-                <h3 class="text-base font-bold text-slate-900 leading-snug">Information & Communication Technology</h3>
-                <p class="text-xs text-slate-400 mt-0.5">Teacher: MADHURIMA YERRAPRAGADA</p>
-              </div>
-              <span id="badge-sreedyuti-ict" class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 whitespace-nowrap">
-                Pending
-              </span>
-            </div>
-            <label class="block bg-amber-50/70 hover:bg-amber-50/90 rounded-2xl p-4 border border-amber-200/80 mb-3 cursor-pointer transition-all">
-              <div class="flex items-start gap-3">
-                <input type="checkbox" id="check-sreedyuti-ict" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-purple-600 focus:ring-purple-500 cursor-pointer" onchange="toggleHomework('sreedyuti', 'Grade VI - A', 'ICT', 'Practise all the HTML tags explained in class.', this.checked, 'badge-sreedyuti-ict')">
-                <div class="flex-1">
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold uppercase tracking-wider text-amber-900">Homework Task</span>
-                    <span class="text-xs font-semibold text-purple-600">Tap to mark done</span>
-                  </div>
-                  <p class="task-text text-sm font-semibold text-amber-950 leading-relaxed mt-1">Practise all the HTML tags explained in class.</p>
-                </div>
-              </div>
-            </label>
-            <div class="bg-purple-50/30 rounded-2xl p-3.5 border border-purple-100/60">
-              <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-0.5">Classwork Notes</p>
-              <p class="text-xs text-slate-600 leading-relaxed">Revised the HTML structure and explained the use of heading (&lt;h1&gt;–&lt;h6&gt;), line break (&lt;br&gt;), horizontal line (&lt;hr&gt;), paragraph (&lt;p&gt;), bold (&lt;b&gt;), italic (&lt;i&gt;), and underline (&lt;u&gt;) tags with examples.</p>
-            </div>
-          </article>
-
-          <!-- Fallback Card 2: English -->
-          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-purple-100">
-            <div class="flex justify-between items-start gap-3 mb-3.5">
-              <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-50 text-purple-700 border border-purple-200/60 mb-1">English</span>
-                <h3 class="text-base font-bold text-slate-900 leading-snug">R1 - English</h3>
-                <p class="text-xs text-slate-400 mt-0.5">Teacher: ANSHA HIBA K M</p>
-              </div>
-              <span id="badge-sreedyuti-eng1" class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 whitespace-nowrap">
-                Pending
-              </span>
-            </div>
-            <label class="block bg-amber-50/70 hover:bg-amber-50/90 rounded-2xl p-4 border border-amber-200/80 mb-2.5 cursor-pointer transition-all">
-              <div class="flex items-start gap-3">
-                <input type="checkbox" id="check-sreedyuti-eng1" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-purple-600 focus:ring-purple-500 cursor-pointer" onchange="toggleHomework('sreedyuti', 'Grade VI - A', 'English', 'CB- pg no: 89 Life Skills Qn 1 (to be written in the CW)', this.checked, 'badge-sreedyuti-eng1')">
-                <div class="flex-1">
-                  <span class="text-xs font-bold uppercase tracking-wider text-amber-900">Homework Task</span>
-                  <p class="task-text text-sm font-semibold text-amber-950 leading-relaxed mt-1">CB- pg no: 89 Life Skills Qn 1 (to be written in the CW)<br><span class="text-xs text-amber-800 font-normal">GENTLE REMINDER: Start preparing for the Speaking Activity- Topic is give in the WB pg no: 69</span></p>
-                </div>
-              </div>
-            </label>
-            <div class="bg-purple-50/30 rounded-2xl p-3.5 border border-purple-100/60">
-              <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-0.5">Classwork Notes</p>
-              <p class="text-xs text-slate-600 leading-relaxed">Notes- Arunima Sinha | Grammar - Introduction- Active and Passive Voice</p>
-            </div>
-          </article>
-
-          <!-- Fallback Card 3: Social Science -->
-          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-purple-100">
-            <div class="flex justify-between items-start gap-3 mb-3">
-              <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-50 text-purple-700 border border-purple-200/60 mb-1">Social Science</span>
-                <h3 class="text-base font-bold text-slate-900 leading-snug">Social Science</h3>
-                <p class="text-xs text-slate-400 mt-0.5">Teacher: UTKARSHA SRIVASTAVA • Topic: Landforms and Life</p>
-              </div>
-              <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-600 border border-slate-200 whitespace-nowrap">
-                Classwork Only
-              </span>
-            </div>
-            <div class="bg-purple-50/30 rounded-2xl p-3.5 border border-purple-100/60">
-              <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-0.5">Classwork Notes</p>
-              <p class="text-xs text-slate-600 leading-relaxed">Explained desert and challenges faced by people living in mountains, plains, desert etc.</p>
-            </div>
-          </article>
+          <!-- Cards rendered dynamically -->
         </div>
 
       </section>
@@ -158,7 +88,7 @@
             </div>
             <div>
               <h2 class="text-lg sm:text-xl font-extrabold text-white leading-tight">Sreekriti Kalakbandi</h2>
-              <p class="text-xs text-pink-100 font-medium mt-0.5">ID: 23OMGS0028 • Grade I - A</p>
+              <p class="text-xs text-pink-100 font-medium mt-0.5">Grade I - A • Primary School</p>
             </div>
           </div>
           <span class="text-xs font-bold px-3 py-1.5 rounded-xl bg-white/20 text-white border border-white/30 backdrop-blur-sm">
@@ -167,95 +97,7 @@
         </div>
 
         <div id="cards-sreekriti" class="space-y-4">
-          <!-- Fallback Card 1: Mathematics -->
-          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-pink-100">
-            <div class="flex justify-between items-start gap-3 mb-3.5">
-              <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-pink-50 text-pink-700 border border-pink-200/60 mb-1">Mathematics</span>
-                <h3 class="text-base font-bold text-slate-900 leading-snug">Mathematics</h3>
-                <p class="text-xs text-slate-400 mt-0.5">Teacher: NAKSHENDRA SONTHALIA • Topic: Lina's family</p>
-              </div>
-              <span id="badge-sreekriti-math" class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 whitespace-nowrap">
-                Pending
-              </span>
-            </div>
-            <label class="block bg-amber-50/70 hover:bg-amber-50/90 rounded-2xl p-4 border border-amber-200/80 mb-3 cursor-pointer transition-all">
-              <div class="flex items-start gap-3">
-                <input type="checkbox" id="check-sreekriti-math" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-pink-500 focus:ring-pink-500 cursor-pointer" onchange="toggleHomework('sreekriti', 'Grade I - A', 'Mathematics', 'complete tb Pg no 79. last two bits', this.checked, 'badge-sreekriti-math')">
-                <div class="flex-1">
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold uppercase tracking-wider text-amber-900">Homework Task</span>
-                    <span class="text-xs font-semibold text-pink-600">Tap to mark done</span>
-                  </div>
-                  <p class="task-text text-sm font-semibold text-amber-950 leading-relaxed mt-1">complete tb Pg no 79. last two bits</p>
-                </div>
-              </div>
-            </label>
-            <div class="bg-pink-50/30 rounded-2xl p-3.5 border border-pink-100/60">
-              <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-0.5">Classwork Notes</p>
-              <p class="text-xs text-slate-600 leading-relaxed">Completed tb pg no 76-80</p>
-            </div>
-          </article>
-
-          <!-- Fallback Card 2: English -->
-          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-pink-100">
-            <div class="flex justify-between items-start gap-3 mb-3.5">
-              <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-pink-50 text-pink-700 border border-pink-200/60 mb-1">English</span>
-                <h3 class="text-base font-bold text-slate-900 leading-snug">R1 - English</h3>
-                <p class="text-xs text-slate-400 mt-0.5">Teacher: NAKSHENDRA SONTHALIA • Topic: A visit to the Market</p>
-              </div>
-              <span id="badge-sreekriti-eng" class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 whitespace-nowrap">
-                Pending
-              </span>
-            </div>
-            <label class="block bg-amber-50/70 hover:bg-amber-50/90 rounded-2xl p-4 border border-amber-200/80 mb-3 cursor-pointer transition-all">
-              <div class="flex items-start gap-3">
-                <input type="checkbox" id="check-sreekriti-eng" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-pink-500 focus:ring-pink-500 cursor-pointer" onchange="toggleHomework('sreekriti', 'Grade I - A', 'English', 'Frame two sentences for the word explore in the notebook and complete tb Pg no 94 bit A', this.checked, 'badge-sreekriti-eng')">
-                <div class="flex-1">
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold uppercase tracking-wider text-amber-900">Homework Task</span>
-                    <span class="text-xs font-semibold text-pink-600">Tap to mark done</span>
-                  </div>
-                  <p class="task-text text-sm font-semibold text-amber-950 leading-relaxed mt-1">Frame two sentences for the word explore in the notebook and complete tb Pg no 94 bit A</p>
-                </div>
-              </div>
-            </label>
-            <div class="bg-pink-50/30 rounded-2xl p-3.5 border border-pink-100/60">
-              <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-0.5">Classwork Notes</p>
-              <p class="text-xs text-slate-600 leading-relaxed">Completed tb Pg no93-97 and written the word explore in the notebook.</p>
-            </div>
-          </article>
-
-          <!-- Fallback Card 3: Telugu -->
-          <article class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-pink-100">
-            <div class="flex justify-between items-start gap-3 mb-3.5">
-              <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-pink-50 text-pink-700 border border-pink-200/60 mb-1">Telugu</span>
-                <h3 class="text-base font-bold text-slate-900 leading-snug">R2 - Telugu</h3>
-                <p class="text-xs text-slate-400 mt-0.5">Teacher: VIJAYA KUMARI MEDAPATI</p>
-              </div>
-              <span id="badge-sreekriti-tel" class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 whitespace-nowrap">
-                Pending
-              </span>
-            </div>
-            <label class="block bg-amber-50/70 hover:bg-amber-50/90 rounded-2xl p-4 border border-amber-200/80 mb-3 cursor-pointer transition-all">
-              <div class="flex items-start gap-3">
-                <input type="checkbox" id="check-sreekriti-tel" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 text-pink-500 focus:ring-pink-500 cursor-pointer" onchange="toggleHomework('sreekriti', 'Grade I - A', 'Telugu', 'ట ఠ డ ఢ ణ practice letters in Notebook', this.checked, 'badge-sreekriti-tel')">
-                <div class="flex-1">
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold uppercase tracking-wider text-amber-900">Writing Practice</span>
-                    <span class="text-xs font-semibold text-pink-600">Tap to mark done</span>
-                  </div>
-                  <p class="task-text text-sm font-semibold text-amber-950 leading-relaxed mt-1">ట ఠ డ ఢ ణ practice letters in Notebook</p>
-                </div>
-              </div>
-            </label>
-            <div class="bg-pink-50/30 rounded-2xl p-3.5 border border-pink-100/60">
-              <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-0.5">Classwork Notes</p>
-              <p class="text-xs text-slate-600 leading-relaxed">ట, ఠ, డ, ఢ, ణ letters Reading and writing done in notebook.</p>
-            </div>
-          </article>
+          <!-- Cards rendered dynamically -->
         </div>
 
       </section>
@@ -266,7 +108,7 @@
     <div class="mt-8 bg-white rounded-3xl p-4 sm:p-5 border border-slate-200/90 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 shadow-sm">
       <div class="flex items-center gap-2">
         <span class="text-emerald-600 font-bold">📊 Google Sheet Sync:</span>
-        <span id="webhook-hint">Logging to Olivemount Daily Homework Tracker</span>
+        <span id="webhook-hint">Two-way sync active with Olivemount Daily Homework Tracker</span>
       </div>
       <button onclick="promptWebhookUrl()" class="px-3.5 py-1.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 font-medium transition-all">
         ⚙️ Settings / Sheet Webhook
@@ -318,9 +160,10 @@
           renderStudents(data.students);
         }
       } catch (e) {
-        console.warn('Using embedded fallback cards:', e);
+        console.warn('Error loading data/homework.json:', e);
       } finally {
-        restoreCheckboxStates();
+        restoreLocalCheckboxStates();
+        fetchTasksFromSheet();
       }
     }
 
@@ -388,15 +231,17 @@
           if (hasHw) {
             item.homework.forEach((hw, hwIdx) => {
               const checkId = `check-${student.key}-${sIdx}-${hwIdx}`;
-              const taskEsc = escapeHtml(hw.description.replace(/\n/g, ' '));
-              const taskAttr = escapeQuotes(hw.description.replace(/\n/g, ' '));
+              const taskClean = hw.description.replace(/\n/g, ' ').trim();
+              const taskEsc = escapeHtml(taskClean);
+              const taskAttr = escapeQuotes(taskClean);
               const subjAttr = escapeQuotes(item.subject);
               const gradeAttr = escapeQuotes(student.grade);
+              const studentName = student.key === 'sreedyuti' ? 'Sreedyuti Kalakbandi' : 'Sreekriti Kalakbandi';
 
               html += `
               <label class="block bg-amber-50/70 hover:bg-amber-50/90 rounded-2xl p-4 border border-amber-200/80 mb-3 cursor-pointer transition-all">
                 <div class="flex items-start gap-3">
-                  <input type="checkbox" id="${checkId}" data-badge-id="${badgeId}" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 ${checkColor} cursor-pointer" onchange="toggleHomework('${student.key}', '${gradeAttr}', '${subjAttr}', '${taskAttr}', this.checked, '${badgeId}')">
+                  <input type="checkbox" id="${checkId}" data-badge-id="${badgeId}" data-student="${escapeHtml(studentName)}" data-task="${escapeHtml(taskClean)}" class="task-checkbox mt-1 w-5 h-5 rounded border-amber-300 ${checkColor} cursor-pointer" onchange="toggleHomework('${student.key}', '${gradeAttr}', '${subjAttr}', '${taskAttr}', this.checked, '${badgeId}')">
                   <div class="flex-1">
                     <div class="flex items-center justify-between">
                       <span class="text-xs font-bold uppercase tracking-wider text-amber-900">Homework Task</span>
@@ -433,7 +278,7 @@
       });
     }
 
-    function restoreCheckboxStates() {
+    function restoreLocalCheckboxStates() {
       const prefix = getStoragePrefix();
       document.querySelectorAll('.task-checkbox').forEach(cb => {
         const saved = localStorage.getItem(prefix + cb.id);
@@ -441,6 +286,83 @@
           cb.checked = true;
           const badgeId = cb.getAttribute('data-badge-id');
           if (badgeId) updateBadge(badgeId, true);
+        }
+      });
+    }
+
+    // Two-Way Sync: Pull latest completion status from Google Sheet across all devices
+    function fetchTasksFromSheet(isManual = false) {
+      const webhookUrl = getActiveWebhookUrl();
+      const indicator = document.getElementById('sync-status-indicator');
+      const text = document.getElementById('sync-status-text');
+
+      if (!webhookUrl) return;
+
+      if (indicator) indicator.className = "w-2 h-2 rounded-full bg-indigo-500 animate-spin";
+      if (text) text.textContent = "Syncing from Sheet...";
+
+      const callbackName = 'sheetStatusCallback_' + Math.floor(Math.random() * 100000);
+      const queryUrl = webhookUrl + (webhookUrl.indexOf('?') === -1 ? '?' : '&') +
+        'action=getStatus&date=' + encodeURIComponent(CURRENT_DATE_STR) +
+        '&callback=' + callbackName +
+        '&t=' + Date.now();
+
+      // Clean up previous JSONP script if any
+      const existingScript = document.getElementById('jsonp-sheet-sync');
+      if (existingScript) existingScript.remove();
+
+      let timeoutHandle = null;
+
+      window[callbackName] = function(response) {
+        clearTimeout(timeoutHandle);
+        delete window[callbackName];
+        const scriptEl = document.getElementById('jsonp-sheet-sync');
+        if (scriptEl) scriptEl.remove();
+
+        if (response && response.success && response.tasks) {
+          applySheetStatuses(response.tasks);
+          if (indicator) indicator.className = "w-2 h-2 rounded-full bg-emerald-500";
+          if (text) text.textContent = "Live with Google Sheet";
+        } else {
+          if (indicator) indicator.className = "w-2 h-2 rounded-full bg-amber-400";
+          if (text) text.textContent = "Sheet sync ready";
+        }
+      };
+
+      const script = document.createElement('script');
+      script.id = 'jsonp-sheet-sync';
+      script.src = queryUrl;
+      script.onerror = function() {
+        clearTimeout(timeoutHandle);
+        delete window[callbackName];
+        if (indicator) indicator.className = "w-2 h-2 rounded-full bg-emerald-500";
+        if (text) text.textContent = "Live with Google Sheet";
+      };
+
+      timeoutHandle = setTimeout(() => {
+        delete window[callbackName];
+        const scriptEl = document.getElementById('jsonp-sheet-sync');
+        if (scriptEl) scriptEl.remove();
+        if (indicator) indicator.className = "w-2 h-2 rounded-full bg-emerald-500";
+        if (text) text.textContent = "Connected to Google Sheet";
+      }, 7000);
+
+      document.body.appendChild(script);
+    }
+
+    function applySheetStatuses(tasksMap) {
+      const prefix = getStoragePrefix();
+      document.querySelectorAll('.task-checkbox').forEach(cb => {
+        const student = (cb.getAttribute('data-student') || '').trim().toLowerCase();
+        const task = (cb.getAttribute('data-task') || '').trim().toLowerCase();
+        const key = student + '::' + task;
+        const badgeId = cb.getAttribute('data-badge-id');
+
+        if (tasksMap[key]) {
+          const isDone = tasksMap[key].status === 'Done';
+          cb.checked = isDone;
+          localStorage.setItem(prefix + cb.id, isDone);
+          if (badgeId) updateBadge(badgeId, isDone);
         }
       });
     }
@@ -516,7 +438,7 @@
       if (webhookUrl) {
         if (indicator) indicator.className = "w-2 h-2 rounded-full bg-emerald-500";
         if (text) text.textContent = "Connected to Google Sheet";
-        if (hint) hint.textContent = "Active Sheet Webhook: Connected";
+        if (hint) hint.textContent = "Two-way sync active with Olivemount Daily Homework Tracker";
       } else {
         if (indicator) indicator.className = "w-2 h-2 rounded-full bg-amber-400";
         if (text) text.textContent = "Webhook not set";
@@ -530,6 +452,7 @@
       if (entered !== null) {
         localStorage.setItem('omgs_sheet_webhook_url', entered.trim());
         checkWebhookConfig();
+        fetchTasksFromSheet(true);
         alert("Google Sheet Webhook configured! Checkbox taps will now log directly to your spreadsheet.");
       }
     }
