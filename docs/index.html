@@ -350,11 +350,10 @@
       }
     }
 
-    function triggerSchoolPortalSync() {
+    async function triggerSchoolPortalSync() {
       const btn = document.getElementById('trigger-portal-sync-btn');
       const icon = document.getElementById('trigger-btn-icon');
       const text = document.getElementById('trigger-btn-text');
-      const webhookUrl = getActiveWebhookUrl();
 
       // Prevent duplicate spam: 90s cooldown
       const lastTrigger = localStorage.getItem('omgs_last_portal_sync_trigger');
@@ -363,6 +362,55 @@
         alert(`A school portal sync was already started! Please wait ${remaining}s for it to finish.`);
         return;
       }
+
+      // Check if user has saved a GitHub Token locally in browser
+      let ghToken = localStorage.getItem('omgs_gh_token');
+
+      // If GitHub Token is available, trigger GitHub directly (instant, bypasses Google permissions)
+      if (ghToken) {
+        if (btn) {
+          btn.disabled = true;
+          btn.classList.add('opacity-70', 'cursor-not-allowed');
+        }
+        if (icon) icon.className = "animate-spin inline-block";
+        if (text) text.textContent = "Connecting to GitHub...";
+
+        try {
+          const resp = await fetch("https://api.github.com/repos/vinaykalakbandi/olivemount-homework/actions/workflows/update_homework.yml/dispatches", {
+            method: "POST",
+            headers: {
+              "Authorization": "Bearer " + ghToken,
+              "Accept": "application/vnd.github+json"
+            },
+            body: JSON.stringify({ ref: "main" })
+          });
+
+          if (resp.status === 204 || resp.status === 200) {
+            localStorage.setItem('omgs_last_portal_sync_trigger', Date.now());
+            startSyncProgressCountdown(75);
+            return;
+          } else if (resp.status === 401) {
+            localStorage.removeItem('omgs_gh_token');
+            resetTriggerButton();
+            alert("The saved GitHub token was invalid. Please configure your token again.");
+            return;
+          } else {
+            console.warn("Direct dispatch returned status:", resp.status);
+          }
+        } catch (e) {
+          console.warn("Direct fetch error:", e);
+        }
+      }
+
+      // Fallback: Trigger via Google Apps Script Web App
+      triggerViaAppsScript();
+    }
+
+    function triggerViaAppsScript() {
+      const btn = document.getElementById('trigger-portal-sync-btn');
+      const icon = document.getElementById('trigger-btn-icon');
+      const text = document.getElementById('trigger-btn-text');
+      const webhookUrl = getActiveWebhookUrl();
 
       if (btn) {
         btn.disabled = true;
@@ -380,7 +428,7 @@
         const scriptEl = document.getElementById('jsonp-portal-trigger');
         if (scriptEl) scriptEl.remove();
         resetTriggerButton();
-        showSyncFallbackModal("Connection timed out. Your Google Apps Script may need the trigger update, or you can run it directly on GitHub.");
+        showSyncFallbackModal("Connection timed out. Would you like to enter your GitHub token for 1-click sync or open GitHub Actions?");
       }, 9000);
 
       window[callbackName] = function(response) {
@@ -408,7 +456,7 @@
         clearTimeout(timeoutHandle);
         delete window[callbackName];
         resetTriggerButton();
-        showSyncFallbackModal("Could not connect to Google Apps Script. You can run the scraper directly from GitHub Actions.");
+        showSyncFallbackModal("Could not connect to Google Apps Script.");
       };
       document.body.appendChild(script);
     }
@@ -457,7 +505,20 @@
 
     function showSyncFallbackModal(msg) {
       const fallbackUrl = "https://github.com/vinaykalakbandi/olivemount-homework/actions/workflows/update_homework.yml";
-      if (confirm(`${msg}\n\nWould you like to open GitHub Actions now to click 'Run workflow'?`)) {
+      const userChoice = confirm(
+        "⚡ 1-Click Sync:\n\n" +
+        "Would you like to connect your GitHub Token for direct 1-click sync from this device?\n\n" +
+        "• Click 'OK' to enter your GitHub token (only needed once per device)\n" +
+        "• Click 'Cancel' to open GitHub Actions and click 'Run workflow'"
+      );
+      if (userChoice) {
+        const entered = prompt("Paste your GitHub Personal Access Token (starts with ghp_...):");
+        if (entered && entered.trim().startsWith("ghp_")) {
+          localStorage.setItem('omgs_gh_token', entered.trim());
+          alert("GitHub Token saved! Triggering cloud sync now...");
+          triggerSchoolPortalSync();
+        }
+      } else {
         window.open(fallbackUrl, '_blank');
       }
     }

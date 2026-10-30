@@ -62,6 +62,11 @@ Open your Google Sheet: [Olivemount Daily Homework Tracker](https://docs.google.
  * 4. triggerGitHubScraper(): Dispatches the GitHub Actions Playwright scraper workflow on demand.
  */
 
+// Run this function directly in Apps Script to prompt Google's authorization popup!
+function grantPermissions() {
+  UrlFetchApp.fetch("https://api.github.com");
+}
+
 // Helper to normalize dates (handles Date objects, ISO strings, etc.)
 function normalizeDateString(val) {
   if (!val) return "";
