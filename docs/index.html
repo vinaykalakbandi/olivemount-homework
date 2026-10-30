@@ -350,16 +350,39 @@
       document.body.appendChild(script);
     }
 
+    function cleanString(str) {
+      if (!str) return '';
+      return String(str)
+        .toLowerCase()
+        .replace(/[^\w\s\u0C00-\u0C7F]/gi, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
     function applySheetStatuses(tasksMap) {
       const prefix = getStoragePrefix();
       document.querySelectorAll('.task-checkbox').forEach(cb => {
-        const student = (cb.getAttribute('data-student') || '').trim().toLowerCase();
-        const task = (cb.getAttribute('data-task') || '').trim().toLowerCase();
-        const key = student + '::' + task;
+        const student = cleanString(cb.getAttribute('data-student') || '');
+        const task = cleanString(cb.getAttribute('data-task') || '');
         const badgeId = cb.getAttribute('data-badge-id');
 
-        if (tasksMap[key]) {
-          const isDone = tasksMap[key].status === 'Done';
+        let matchedStatus = null;
+        for (const key in tasksMap) {
+          const parts = key.split('::');
+          const mapStudent = cleanString(parts[0] || '');
+          const mapTask = cleanString(parts[1] || '');
+
+          const stMatch = (student.indexOf(mapStudent) !== -1 || mapStudent.indexOf(student) !== -1);
+          const tkMatch = (task === mapTask || task.indexOf(mapTask) !== -1 || mapTask.indexOf(task) !== -1);
+
+          if (stMatch && tkMatch) {
+            matchedStatus = tasksMap[key].status;
+            break;
+          }
+        }
+
+        if (matchedStatus) {
+          const isDone = (matchedStatus === 'Done');
           cb.checked = isDone;
           localStorage.setItem(prefix + cb.id, isDone);
           if (badgeId) updateBadge(badgeId, isDone);

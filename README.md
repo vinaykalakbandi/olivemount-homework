@@ -54,19 +54,127 @@ Open your Google Sheet: [Olivemount Daily Homework Tracker](https://docs.google.
 2. Replace whatever is in the editor with this two-way sync script:
 
 ```javascript
+/**
+ * Olivemount Homework Tracker - Fixed In-Place Two-Way Sync Engine
+ * 1. refreshCurrentHomeworkSheet(): Clears sheet, formats headers, and writes current homework tasks.
+ * 2. doGet(): Returns live task statuses for cross-device sync.
+ * 3. doPost(): Updates Status and Timestamp in-place. NEVER adds new rows!
+ */
+
+// Helper to sanitize strings (supports Telugu Unicode, removes punctuation)
+function cleanString(str) {
+  if (!str) return "";
+  return String(str)
+    .toLowerCase()
+    .replace(/[^\w\s\u0C00-\u0C7F]/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// Run this once in Apps Script to populate/refresh today's homework
+function refreshCurrentHomeworkSheet() {
+  var defaultTasks = [
+    {
+      date: "2026-10-29",
+      student: "Sreedyuti Kalakbandi",
+      grade: "Grade VI - A",
+      subject: "INFORMATION & COMMUNICATION TECHNOLOGY",
+      task: "Practise all the HTML tags explained in class."
+    },
+    {
+      date: "2026-10-29",
+      student: "Sreedyuti Kalakbandi",
+      grade: "Grade VI - A",
+      subject: "R1 - ENGLISH",
+      task: "CB- pg no: 89 Life Skills Qn 1 (to be written in the CW) GENTLE REMINDER: Start preparing for the Speaking Activity- Topic is give in the WB pg no: 69"
+    },
+    {
+      date: "2026-10-29",
+      student: "Sreekriti Kalakbandi",
+      grade: "Grade I - A",
+      subject: "General",
+      task: "Hindi - Class work- Workbook Page number 6,7 done."
+    },
+    {
+      date: "2026-10-29",
+      student: "Sreekriti Kalakbandi",
+      grade: "Grade I - A",
+      subject: "MATHEMATICS",
+      task: "complete tb Pg no 79. last two bits"
+    },
+    {
+      date: "2026-10-29",
+      student: "Sreekriti Kalakbandi",
+      grade: "Grade I - A",
+      subject: "R1 - ENGLISH",
+      task: "Frame two sentences for the word explore in the notebook and complete tb Pg no 94 bit A"
+    },
+    {
+      date: "2026-10-29",
+      student: "Sreekriti Kalakbandi",
+      grade: "Grade I - A",
+      subject: "R2 - TELUGU/HINDI",
+      task: "ట ఠ డ ఢ ణ practice letters in Notebook"
+    }
+  ];
+  return refreshSheetWithTasks(defaultTasks);
+}
+
+function refreshSheetWithTasks(tasks, defaultDate) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  sheet.clear(); // Clear all old rows
+  
+  // Set up clean header
+  var headers = ["Date", "Student", "Grade", "Subject", "Homework Task", "Status", "Completed At"];
+  sheet.appendRow(headers);
+  
+  var headerRange = sheet.getRange(1, 1, 1, headers.length);
+  headerRange.setFontWeight("bold");
+  headerRange.setBackground("#EDE9FE"); // Soft pastel purple header
+  headerRange.setFontColor("#3730A3");
+  sheet.setFrozenRows(1);
+  
+  var rowsToAdd = [];
+  for (var i = 0; i < tasks.length; i++) {
+    var t = tasks[i];
+    rowsToAdd.push([
+      t.date || defaultDate || "2026-10-29",
+      t.student,
+      t.grade || "",
+      t.subject || "",
+      t.task,
+      t.status || "Pending",
+      t.timestamp || ""
+    ]);
+  }
+  
+  if (rowsToAdd.length > 0) {
+    sheet.getRange(2, 1, rowsToAdd.length, headers.length).setValues(rowsToAdd);
+    sheet.getRange(2, 6, rowsToAdd.length, 1).setHorizontalAlignment("center");
+  }
+  
+  for (var col = 1; col <= headers.length; col++) {
+    sheet.autoResizeColumn(col);
+  }
+  
+  return rowsToAdd.length;
+}
+
 // 1. GET: Returns current completion statuses for cross-device sync
 function doGet(e) {
   var params = e ? e.parameter : {};
-  var targetDate = params.date || "";
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   var rows = sheet.getDataRange().getValues();
   
+  if (rows.length <= 1) {
+    refreshCurrentHomeworkSheet();
+    rows = sheet.getDataRange().getValues();
+  }
+  
   var statusMap = {};
   
-  // Columns: Date (0), Student (1), Grade (2), Subject (3), Task (4), Status (5), Timestamp (6)
   for (var i = 1; i < rows.length; i++) {
     var r = rows[i];
-    var rowDate = String(r[0] || "").trim();
     var student = String(r[1] || "").trim();
     var task = String(r[4] || "").trim();
     var status = String(r[5] || "").trim();
@@ -74,22 +182,18 @@ function doGet(e) {
     
     if (!student || !task) continue;
     
-    var dateMatches = (!targetDate || rowDate === targetDate || rowDate.indexOf(targetDate) !== -1 || targetDate.indexOf(rowDate) !== -1);
-    if (dateMatches) {
-      var key = (student + "::" + task).toLowerCase();
-      statusMap[key] = {
-        student: student,
-        task: task,
-        status: status,
-        timestamp: timestamp
-      };
-    }
+    var key = cleanString(student) + "::" + cleanString(task);
+    statusMap[key] = {
+      student: student,
+      task: task,
+      status: status || "Pending",
+      timestamp: timestamp
+    };
   }
   
   var callback = params.callback;
   var jsonString = JSON.stringify({ success: true, tasks: statusMap });
   
-  // JSONP support for universal cross-origin device support
   if (callback) {
     return ContentService.createTextOutput(callback + "(" + jsonString + ");")
       .setMimeType(ContentService.MimeType.JAVASCRIPT);
@@ -99,49 +203,49 @@ function doGet(e) {
     .setMimeType(ContentService.MimeType.JSON);
 }
 
-// 2. POST: Updates existing row in-place (no duplicates!) or appends new row
+// 2. POST: In-place update ONLY. Never adds new rows!
 function doPost(e) {
   var data = JSON.parse(e.postData.contents);
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  var rows = sheet.getDataRange().getValues();
   
-  var targetDate = String(data.date || "").trim();
-  var targetStudent = String(data.student || "").trim().toLowerCase();
-  var targetTask = String(data.task || "").trim().toLowerCase();
+  if (data.action === "refreshSheet" && data.tasks) {
+    var count = refreshSheetWithTasks(data.tasks, data.date);
+    return ContentService.createTextOutput(JSON.stringify({ success: true, count: count }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  
+  var rows = sheet.getDataRange().getValues();
+  var targetStudent = cleanString(data.student);
+  var targetTask = cleanString(data.task);
   
   var matchedRowIndex = -1;
   
   for (var i = 1; i < rows.length; i++) {
-    var r = rows[i];
-    var rowDate = String(r[0] || "").trim();
-    var student = String(r[1] || "").trim().toLowerCase();
-    var task = String(r[4] || "").trim().toLowerCase();
+    var studentInSheet = cleanString(rows[i][1]);
+    var taskInSheet = cleanString(rows[i][4]);
     
-    var dateMatches = (!targetDate || rowDate === targetDate || rowDate.indexOf(targetDate) !== -1 || targetDate.indexOf(rowDate) !== -1);
-    if (dateMatches && student === targetStudent && task === targetTask) {
-      matchedRowIndex = i + 1; // 1-based index
+    var isStudentMatch = (studentInSheet === targetStudent || studentInSheet.indexOf(targetStudent) !== -1 || targetStudent.indexOf(studentInSheet) !== -1);
+    var isTaskMatch = (taskInSheet === targetTask || taskInSheet.indexOf(targetTask) !== -1 || targetTask.indexOf(taskInSheet) !== -1);
+    
+    if (isStudentMatch && isTaskMatch) {
+      matchedRowIndex = i + 1; // 1-based index in sheet
       break;
     }
   }
   
   if (matchedRowIndex > 0) {
-    // Update existing row in place: Status (Col 6), Timestamp (Col 7)
-    sheet.getRange(matchedRowIndex, 6).setValue(data.status);
-    sheet.getRange(matchedRowIndex, 7).setValue(data.timestamp);
-  } else {
-    // Append new row if not present
-    sheet.appendRow([
-      data.date,
-      data.student,
-      data.grade,
-      data.subject,
-      data.task,
-      data.status,
-      data.timestamp
-    ]);
+    var newStatus = (data.status === "Done") ? "Done" : "Pending";
+    var timestamp = (newStatus === "Done") ? (data.timestamp || "") : "";
+    
+    sheet.getRange(matchedRowIndex, 6).setValue(newStatus); // Column F: Status
+    sheet.getRange(matchedRowIndex, 7).setValue(timestamp); // Column G: Completed At
+    
+    return ContentService.createTextOutput(JSON.stringify({ success: true, updatedRow: matchedRowIndex, status: newStatus }))
+      .setMimeType(ContentService.MimeType.JSON);
   }
   
-  return ContentService.createTextOutput(JSON.stringify({ success: true, updatedRow: matchedRowIndex }))
+  // NEVER ADD NEW ROWS!
+  return ContentService.createTextOutput(JSON.stringify({ success: false, message: "Row not found. No rows added." }))
     .setMimeType(ContentService.MimeType.JSON);
 }
 ```

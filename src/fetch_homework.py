@@ -228,5 +228,34 @@ def main():
 
     print(f"Scraping completed. Wrote {len(results)} students data to docs/data/homework.json.")
 
+    # Auto-refresh Google Sheet with today's homework elements
+    webhook_url = os.environ.get("SHEET_WEBHOOK_URL") or "https://script.google.com/macros/s/AKfycbzKKXyacPIxIPuvNvp7cAglDDuD9YmSIaJQ0PZ2X6dFEUSoghixnjkJOhf-q0nrXwSpoA/exec"
+    hw_tasks = []
+    for st in results:
+        for entry in st.get("entries", []):
+            if entry.get("type") == "Homework":
+                hw_tasks.append({
+                    "date": payload.get("date_iso", ""),
+                    "student": st["name"],
+                    "grade": st["grade"],
+                    "subject": entry["subject"],
+                    "task": entry["description"].replace("\n", " ").strip(),
+                    "status": "Pending",
+                    "timestamp": ""
+                })
+    if hw_tasks and webhook_url:
+        import urllib.request
+        try:
+            print(f"Refreshing Google Sheet with {len(hw_tasks)} current homework tasks...")
+            req = urllib.request.Request(
+                webhook_url,
+                data=json.dumps({"action": "refreshSheet", "date": payload.get("date_iso", ""), "tasks": hw_tasks}).encode("utf-8"),
+                headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"}
+            )
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                print("Google Sheet sync response:", resp.read().decode("utf-8"))
+        except Exception as e:
+            print(f"Notice during Google Sheet auto-sync: {e}")
+
 if __name__ == "__main__":
     main()
