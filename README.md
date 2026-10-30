@@ -205,6 +205,13 @@ function doGet(e) {
 
 // 2. POST: In-place update ONLY. Never adds new rows!
 function doPost(e) {
+  // If run manually from Apps Script editor via Run button
+  if (!e || !e.postData || !e.postData.contents) {
+    var count = refreshCurrentHomeworkSheet();
+    return ContentService.createTextOutput(JSON.stringify({ success: true, count: count }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
   var data = JSON.parse(e.postData.contents);
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   
