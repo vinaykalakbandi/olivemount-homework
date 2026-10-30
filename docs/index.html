@@ -195,9 +195,6 @@
           }
         });
 
-        const subjectKeys = Object.keys(grouped);
-        if (subjectKeys.length === 0) return;
-
         // Determine theme styles
         const isPink = student.theme === 'pink' || student.key === 'sreekriti';
         const borderStyle = isPink ? 'border-pink-100' : 'border-purple-100';
@@ -205,6 +202,18 @@
         const tapColor = isPink ? 'text-pink-600' : 'text-purple-600';
         const checkColor = isPink ? 'text-pink-500 focus:ring-pink-500' : 'text-purple-600 focus:ring-purple-500';
         const cwBg = isPink ? 'bg-pink-50/30 border-pink-100/60' : 'bg-purple-50/30 border-purple-100/60';
+
+        const subjectKeys = Object.keys(grouped);
+        if (subjectKeys.length === 0) {
+          container.innerHTML = `
+          <div class="bg-white/80 rounded-3xl p-8 text-center border ${borderStyle} shadow-sm space-y-2.5">
+            <span class="text-4xl block mb-1">🎉</span>
+            <h3 class="text-base font-bold text-slate-800">No Homework Assigned Today!</h3>
+            <p class="text-xs text-slate-500 max-w-sm mx-auto leading-relaxed">No diary or homework entries were posted on the school portal for ${escapeHtml(student.name)}. Enjoy your evening!</p>
+          </div>
+          `;
+          return;
+        }
 
         let html = '';
         subjectKeys.forEach((subjKey, sIdx) => {
