@@ -1,7 +1,7 @@
 {
-  "date": "Friday, October 30, 2026",
-  "date_iso": "2026-10-30",
-  "last_updated": "30 Oct 2026, 09:32 PM IST",
+  "date": "Monday, November 02, 2026",
+  "date_iso": "2026-11-02",
+  "last_updated": "02 Nov 2026, 07:13 PM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -13,60 +13,52 @@
       "theme": "purple",
       "entries": [
         {
-          "subject": "BIOLOGY",
-          "type": "Classwork",
-          "teacher": "GAYATHRI DEVI R",
-          "topic": "STEAM KIT ACTIVITY",
-          "description": "Conducted steam kit activity.",
-          "created_at": "12:44 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Classwork",
-          "teacher": "PRASUNA DESABHOTLA",
-          "topic": "",
-          "description": "Perimeter and area pg 138 figure it out 1&2",
-          "created_at": "03:40 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
+          "subject": "General",
           "type": "Homework",
-          "teacher": "PRASUNA DESABHOTLA",
-          "topic": "",
-          "description": "Perimeter and area pg 138 figure it out 3rd problem.\nCut the tangram at the end of the text book. Cut the triangles and quadrilaterals seperately.\nBring A4 sheet and glue.",
-          "created_at": "03:40 PM"
+          "teacher": "GAYATHRI DEVI R",
+          "topic": "Seed Germination",
+          "description": "Explained seed germination with the the help of a video",
+          "created_at": "03:32 PM"
+        },
+        {
+          "subject": "PHYSICS",
+          "type": "Homework",
+          "teacher": "HYMAVATHI TALLAPUDI",
+          "topic": "PHYSICS",
+          "description": "Prepare well for the PPT Presentations.",
+          "created_at": "11:58 AM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "English",
+          "description": "Active and Passive Voice- Slip Test\nExercises- CB",
+          "created_at": "02:58 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Homework",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "English",
+          "description": "Gentle Reminder: Prepare well for the speaking activity",
+          "created_at": "02:58 PM"
         },
         {
           "subject": "R2 - TELUGU/HINDI",
           "type": "Classwork",
-          "teacher": "PRIYANKA REDDY LINGAREDDY",
-          "topic": "R2 తెలుగు",
-          "description": "Ls.6 explanation and textual exercises are done\n• start leaning the grammar of Ls.6",
-          "created_at": "02:50 PM"
+          "teacher": "SUBINA A K",
+          "topic": "Hindi",
+          "description": "जलाते चलो (व्याख्या)",
+          "created_at": "03:41 PM"
         },
         {
           "subject": "R3 - TELUGU/HINDI",
           "type": "Classwork",
-          "teacher": "PRIYANKA REDDY LINGAREDDY",
-          "topic": "R3 తెలుగు",
-          "description": "Ls.6 explanation and textual exercises are done\n• start leaning the grammar of Ls.6",
-          "created_at": "02:51 PM"
-        },
-        {
-          "subject": "SOCIAL SCIENCE",
-          "type": "Classwork",
-          "teacher": "UTKARSHA SRIVASTAVA",
-          "topic": "India, That is Bharat",
-          "description": "Explained about Mountains and rivers.",
-          "created_at": "03:25 PM"
-        },
-        {
-          "subject": "SOCIAL SCIENCE",
-          "type": "Homework",
-          "teacher": "UTKARSHA SRIVASTAVA",
-          "topic": "India, That is Bharat",
-          "description": "Dear Students,\nA written quiz will be conducted on\nMonday, 2 November 2026, on the topic “E-Waste Management.”\nKindly prepare well.\nAll the best!",
-          "created_at": "03:25 PM"
+          "teacher": "SUBINA A K",
+          "topic": "Hindi",
+          "description": "बया हमारी चिड़िया रानी ( व्याख्या)",
+          "created_at": "03:43 PM"
         }
       ]
     },
@@ -78,7 +70,56 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": []
+      "entries": [
+        {
+          "subject": "EVS",
+          "type": "Classwork",
+          "teacher": "SAMEEN KEHKASHAN",
+          "topic": "",
+          "description": "Did activity:\nLearn as you do-\nCollecting different leaves and printing them with paints on sheet of paper",
+          "created_at": "11:57 AM"
+        },
+        {
+          "subject": "EVS",
+          "type": "Homework",
+          "teacher": "SAMEEN KEHKASHAN",
+          "topic": "",
+          "description": "Let's grow a plant:\nTake a pot or an old cardboard box.\n❖ Fill the box with soil. Take a handful of mustard seeds. Push the seeds into the soil, and cover the seeds with some soil.\n❖ Pour a little water over the soil every day.\n❖ After 4-5 days, you will see small mustard plants grow from the soil.\nLet's draw it:\n❖ Once the mustard plants become a little big, carefully pull out one of the plants. Make sure the roots also come out.\n❖ Now draw the plant on an A4 size paper.\n❖ Colour it and then name the different parts of the plant.\n❖ Did the mustard plant have all the five parts you learnt about? Which parts were not there?\nSubmit the A4 paper on 16-11-26",
+          "created_at": "11:57 AM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "A visit to the Farm , Te Food we Eat",
+          "description": "Completed fruit  chat activity, written new word \"discovver\" in nitebook and Introduction to ch- The Food We Eat on Pg no 98 and 99",
+          "created_at": "01:31 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Homework",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "A visit to the Farm , Te Food we Eat",
+          "description": "Write two more sentences using the word discover.",
+          "created_at": "01:31 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu",
+          "description": "ప, ఫ, బ, భ, మ. letters done in notebook",
+          "created_at": "03:34 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Homework",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu",
+          "description": "practice క to మ 2 time in notebook.",
+          "created_at": "03:34 PM"
+        }
+      ]
     }
   ]
 }
