@@ -1,7 +1,7 @@
 {
-  "date": "Tuesday, November 03, 2026",
-  "date_iso": "2026-11-03",
-  "last_updated": "03 Nov 2026, 06:16 PM IST",
+  "date": "Wednesday, November 04, 2026",
+  "date_iso": "2026-11-04",
+  "last_updated": "04 Nov 2026, 12:09 AM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -11,48 +11,7 @@
       "icon": "🎒",
       "avatar": "images/sreedyuti.jpg",
       "theme": "purple",
-      "entries": [
-        {
-          "subject": "BIOLOGY",
-          "type": "Classwork",
-          "teacher": "GAYATHRI DEVI R",
-          "topic": "STEAM KIT ACTIVITY",
-          "description": "Conducted STEAM KIT activity",
-          "created_at": "12:43 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Classwork",
-          "teacher": "ANSHA HIBA K M",
-          "topic": "English",
-          "description": "Speaking Test\nLs- Dr. Dolittle’s House",
-          "created_at": "03:49 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Homework",
-          "teacher": "ANSHA HIBA K M",
-          "topic": "English",
-          "description": "Reminder: Be prepared for the speaking test.",
-          "created_at": "03:49 PM"
-        },
-        {
-          "subject": "SOCIAL SCIENCE",
-          "type": "Classwork",
-          "teacher": "UTKARSHA SRIVASTAVA",
-          "topic": "India, That is Bharat",
-          "description": "Explained names given by Indians and Foreigners.",
-          "created_at": "02:58 PM"
-        },
-        {
-          "subject": "SOCIAL SCIENCE",
-          "type": "Homework",
-          "teacher": "UTKARSHA SRIVASTAVA",
-          "topic": "India, That is Bharat",
-          "description": "Read the chapter and note down the important key words in your notebook.",
-          "created_at": "02:58 PM"
-        }
-      ]
+      "entries": []
     },
     {
       "key": "sreekriti",
@@ -62,72 +21,7 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": [
-        {
-          "subject": "EVS",
-          "type": "Classwork",
-          "teacher": "SAMEEN KEHKASHAN",
-          "topic": "Plants Around Us",
-          "description": "Activity:\nDraw a big tree on a chart paper paper and cut along the border.Paste things we get from trees and paste them on the tree.",
-          "created_at": "11:40 AM"
-        },
-        {
-          "subject": "EVS",
-          "type": "Homework",
-          "teacher": "SAMEEN KEHKASHAN",
-          "topic": "Plants Around Us",
-          "description": "Go for a walk with an elder and find out about different plants. Collect their leaves and dry them by keeping them under the folds of a newspaper. Once they are dry, paste them on an A4 size paper sheet and write the names of the plants they belong to.\nSubmit on 10-11-26",
-          "created_at": "11:40 AM"
-        },
-        {
-          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
-          "type": "Classwork",
-          "teacher": "VIMALA V",
-          "topic": "Ch-6: Brain Games",
-          "description": "– Patterns- Students enthusiastically participated in an interactive Wordwall activity. They enjoyed matching patterns and answering quiz questions",
-          "created_at": "03:31 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Classwork",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "",
-          "description": "Completed capacity activity using buckets, jug, bowls and glasses. and completed tb Pg no 81 and 82 in tb",
-          "created_at": "12:23 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Homework",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "",
-          "description": "Complete tb Pg no 81 bit B-iv",
-          "created_at": "12:23 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Classwork",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "The Food We Eat",
-          "description": "Completed tb Pg no 100-101",
-          "created_at": "12:21 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Homework",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "The Food We Eat",
-          "description": "Read tb Pg no 100",
-          "created_at": "12:21 PM"
-        },
-        {
-          "subject": "R2 - TELUGU/HINDI",
-          "type": "Classwork",
-          "teacher": "VIJAYA KUMARI MEDAPATI",
-          "topic": "Telugu",
-          "description": "య to ఱ letters Reading and writing done in notebook.",
-          "created_at": "03:33 PM"
-        }
-      ]
+      "entries": []
     }
   ]
 }
