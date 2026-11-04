@@ -1,7 +1,7 @@
 {
-  "date": "Wednesday, November 04, 2026",
-  "date_iso": "2026-11-04",
-  "last_updated": "04 Nov 2026, 06:28 PM IST",
+  "date": "Thursday, November 05, 2026",
+  "date_iso": "2026-11-05",
+  "last_updated": "05 Nov 2026, 12:20 AM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -11,64 +11,7 @@
       "icon": "🎒",
       "avatar": "images/sreedyuti.jpg",
       "theme": "purple",
-      "entries": [
-        {
-          "subject": "CHEMISTRY",
-          "type": "Classwork",
-          "teacher": "GAYATHRI DEVI R",
-          "topic": "Journey through the states of water",
-          "description": "Explained Condensation and water cycle",
-          "created_at": "02:11 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Classwork",
-          "teacher": "PRASUNA DESABHOTLA",
-          "topic": "",
-          "description": "Tangram's Perimeter when arranged as square and rectangle",
-          "created_at": "03:32 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Homework",
-          "teacher": "PRASUNA DESABHOTLA",
-          "topic": "",
-          "description": "Cut coloured pieces of paper to form rectangles and arrange them as shown in textbook page 136. Find the perimeter and areas of the figures. Any three arrangements are to be made.",
-          "created_at": "03:32 PM"
-        },
-        {
-          "subject": "PHYSICS",
-          "type": "Classwork",
-          "teacher": "HYMAVATHI TALLAPUDI",
-          "topic": "Physics",
-          "description": "Students prepared for the PPT Presentations in the class.",
-          "created_at": "03:23 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Classwork",
-          "teacher": "ANSHA HIBA K M",
-          "topic": "English",
-          "description": "Speaking Test\nBiography",
-          "created_at": "03:23 PM"
-        },
-        {
-          "subject": "R2 - TELUGU/HINDI",
-          "type": "Classwork",
-          "teacher": "PRIYANKA REDDY LINGAREDDY",
-          "topic": "R2 తెలుగు",
-          "description": "Did incomplete works in textbook",
-          "created_at": "03:54 PM"
-        },
-        {
-          "subject": "R3 - TELUGU/HINDI",
-          "type": "Classwork",
-          "teacher": "PRIYANKA REDDY LINGAREDDY",
-          "topic": "R3 తెలుగు",
-          "description": "Did incomplete works in textbook",
-          "created_at": "03:55 PM"
-        }
-      ]
+      "entries": []
     },
     {
       "key": "sreekriti",
@@ -78,56 +21,7 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": [
-        {
-          "subject": "General",
-          "type": "Homework",
-          "teacher": "RASHMI NOWLAKHA",
-          "topic": "Hindi",
-          "description": "Hindi - Class work - workbook page number 13, 14 done.",
-          "created_at": "03:21 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Classwork",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "Lina's family",
-          "description": "Completed tb Pg no 83",
-          "created_at": "12:17 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Homework",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "Lina's family",
-          "description": "Complete tb Pg no 83 bit B",
-          "created_at": "12:17 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Classwork",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "The Food We Eat",
-          "description": "Completed tb Pg no 102-103, wrutten new word\"Purpose\"",
-          "created_at": "12:16 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Homework",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "The Food We Eat",
-          "description": "Frame 2 sentences using the word Purpose in the notebook",
-          "created_at": "12:16 PM"
-        },
-        {
-          "subject": "R2 - TELUGU/HINDI",
-          "type": "Classwork",
-          "teacher": "VIJAYA KUMARI MEDAPATI",
-          "topic": "Telugu",
-          "description": "Done varnamala in notebook.",
-          "created_at": "03:30 PM"
-        }
-      ]
+      "entries": []
     }
   ]
 }
