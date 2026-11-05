@@ -1,7 +1,7 @@
 {
   "date": "Thursday, November 05, 2026",
   "date_iso": "2026-11-05",
-  "last_updated": "05 Nov 2026, 01:25 AM IST",
+  "last_updated": "05 Nov 2026, 07:58 PM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -11,7 +11,64 @@
       "icon": "🎒",
       "avatar": "images/sreedyuti.jpg",
       "theme": "purple",
-      "entries": []
+      "entries": [
+        {
+          "subject": "CHEMISTRY",
+          "type": "Classwork",
+          "teacher": "GAYATHRI DEVI R",
+          "topic": "Journey through the states of water",
+          "description": "Explained\nConditions affects evaporation and condensation\nHow clouds formed",
+          "created_at": "03:37 PM"
+        },
+        {
+          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
+          "type": "Classwork",
+          "teacher": "MADHURIMA YERRAPRAGADA",
+          "topic": "Lab activity",
+          "description": "Lab Activity:\nStudents practised writing HTML programs using the <p>, <b>, <i>, <u>, <sub>, and <sup> tags with examples",
+          "created_at": "04:01 PM"
+        },
+        {
+          "subject": "PHYSICS",
+          "type": "Classwork",
+          "teacher": "HYMAVATHI TALLAPUDI",
+          "topic": "Physics",
+          "description": "PPT Presentations by the students based on the topic Temperature and its measurement is done in the class.",
+          "created_at": "03:08 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "English",
+          "description": "Notes- Dr.Dolittle’s House\nSpeaking Test (Continuation)",
+          "created_at": "02:12 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "SUBINA A K",
+          "topic": "Hindi",
+          "description": "व्याकरण ( कारक - व्याख्या)",
+          "created_at": "04:04 PM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Classwork",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "Landforms and Life",
+          "description": "Activity\n: Landform Explorers – Around the World!\nStudents participated in an\natlas-based activity\nwhere they identified\n10 geographical locations\non the world map, named the continents in which they are located and classified the respective landforms.\nObjective\n: To develop atlas-reading and map-pointing skills, enhance geographical awareness and help students understand the distribution of different landforms across the world.",
+          "created_at": "01:41 PM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Homework",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "Landforms and Life",
+          "description": "Read the Chapter Grassroots Democracy Part II",
+          "created_at": "01:41 PM"
+        }
+      ]
     },
     {
       "key": "sreekriti",
@@ -21,7 +78,56 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": []
+      "entries": [
+        {
+          "subject": "EVS",
+          "type": "Classwork",
+          "teacher": "SAMEEN KEHKASHAN",
+          "topic": "Ch-7 Plants around me",
+          "description": "New words in 5 in 1 book",
+          "created_at": "01:13 PM"
+        },
+        {
+          "subject": "EVS",
+          "type": "Homework",
+          "teacher": "RASHMI NOWLAKHA",
+          "topic": "Hindi",
+          "description": "Hindi - classwork- workbook, page number 16, 17 done.",
+          "created_at": "04:50 PM"
+        },
+        {
+          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
+          "type": "Classwork",
+          "teacher": "VIMALA V",
+          "topic": "Chapter 6: Brain Games",
+          "description": "Students explored ScratchJr and learned to use Event, Movement, and Stop blocks. They applied these blocks to create simple sequences and understand patterns through fun.",
+          "created_at": "03:14 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Fun with Numbers",
+          "description": "Completed tb Pg no 84-86",
+          "created_at": "02:05 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "",
+          "description": "Read unit-7 Farida plans a feast",
+          "created_at": "02:03 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Homework",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "",
+          "description": "Read unit-7 Farida plans a feast from moral story book  and complete fun time on A4 sheet and submit on Tuesday 10/11",
+          "created_at": "02:03 PM"
+        }
+      ]
     }
   ]
 }
