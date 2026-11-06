@@ -1,7 +1,7 @@
 {
-  "date": "Friday, November 06, 2026",
-  "date_iso": "2026-11-06",
-  "last_updated": "06 Nov 2026, 11:53 PM IST",
+  "date": "Saturday, November 07, 2026",
+  "date_iso": "2026-11-07",
+  "last_updated": "07 Nov 2026, 12:44 AM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -11,32 +11,7 @@
       "icon": "🎒",
       "avatar": "images/sreedyuti.jpg",
       "theme": "purple",
-      "entries": [
-        {
-          "subject": "GENERAL SCIENCE",
-          "type": "Classwork",
-          "teacher": "GAYATHRI DEVI R",
-          "topic": "Activity",
-          "description": "Explained Koushal bodh activities.",
-          "created_at": "12:19 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Classwork",
-          "teacher": "ANSHA HIBA K M",
-          "topic": "English",
-          "description": "Notes- Dr. Dolittle’s House\nSpeaking Test (conti)\nPoem- I Speak Sign Language",
-          "created_at": "03:08 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Homework",
-          "teacher": "ANSHA HIBA K M",
-          "topic": "English",
-          "description": "Learn the signs used in sign language to express “Thank you,” “Sorry,” “Please,” and “All the Best.”",
-          "created_at": "03:08 PM"
-        }
-      ]
+      "entries": []
     },
     {
       "key": "sreekriti",
@@ -46,40 +21,7 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": [
-        {
-          "subject": "EVS",
-          "type": "Classwork",
-          "teacher": "SAMEEN KEHKASHAN",
-          "topic": "",
-          "description": "New words 11-17 (5 in 1 book)",
-          "created_at": "11:07 AM"
-        },
-        {
-          "subject": "EVS",
-          "type": "Homework",
-          "teacher": "SAMEEN KEHKASHAN",
-          "topic": "",
-          "description": "Learn and practice well Ch-7 Plants around me New words given in C/W",
-          "created_at": "11:07 AM"
-        },
-        {
-          "subject": "EVS",
-          "type": "Homework",
-          "teacher": "RASHMI NOWLAKHA",
-          "topic": "Hindi",
-          "description": "Hindi- classwork- Activity done.",
-          "created_at": "02:50 PM"
-        },
-        {
-          "subject": "R2 - TELUGU/HINDI",
-          "type": "Classwork",
-          "teacher": "VIJAYA KUMARI MEDAPATI",
-          "topic": "Telugu",
-          "description": "Textbook pg no: 42, 43 done.",
-          "created_at": "03:29 PM"
-        }
-      ]
+      "entries": []
     }
   ]
 }
