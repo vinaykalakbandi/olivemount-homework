@@ -1,7 +1,7 @@
 {
   "date": "Tuesday, November 10, 2026",
   "date_iso": "2026-11-10",
-  "last_updated": "10 Nov 2026, 04:02 AM IST",
+  "last_updated": "10 Nov 2026, 06:38 PM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -11,7 +11,56 @@
       "icon": "🎒",
       "avatar": "images/sreedyuti.jpg",
       "theme": "purple",
-      "entries": []
+      "entries": [
+        {
+          "subject": "MATHEMATICS",
+          "type": "Classwork",
+          "teacher": "PRASUNA DESABHOTLA",
+          "topic": "",
+          "description": "Perimeter and Areas chapter pg149 3rd completed. Started workbook.",
+          "created_at": "02:11 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Homework",
+          "teacher": "PRASUNA DESABHOTLA",
+          "topic": "",
+          "description": "Using 10 squares, figure out the maximum perimeter and minimum perimeter by suitably arranging them.\nFollow eg. given on  page 145.",
+          "created_at": "02:11 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "",
+          "description": "Lesson- Eat from the Edges",
+          "created_at": "02:57 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Homework",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "",
+          "description": "CB- pg 100 (Match the following)\nWB- pg 73 - Descriptive Essay\nA sign language storytelling activity has been scheduled for the students on Monday. Students will work in groups to narrate a short story using sign language. Kindly ensure that your ward is well-prepared for the activity. (Based on the poem - I Speak Sign Language- CB pg 94)",
+          "created_at": "02:57 PM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Classwork",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "Grassroots Democracy Part II",
+          "description": "Explained the story of Lakshmanpur, Panchayatiraj System and three level of local government.",
+          "created_at": "12:08 PM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Homework",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "Grassroots Democracy Part II",
+          "description": "Read the topic that was taught in the class.",
+          "created_at": "12:08 PM"
+        }
+      ]
     },
     {
       "key": "sreekriti",
@@ -21,7 +70,56 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": []
+      "entries": [
+        {
+          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
+          "type": "Classwork",
+          "teacher": "VIMALA V",
+          "topic": "",
+          "description": "Chapter 6: Brain Games\nStudents discussed the chapter concepts and completed the textbook exercises.",
+          "created_at": "04:10 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Fun with Numbers",
+          "description": "completed writing number names 31-50",
+          "created_at": "02:38 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Homework",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Fun with Numbers",
+          "description": "learn number names 21-50",
+          "created_at": "02:38 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Jam session and Olivocab",
+          "description": "Took the Jam session on \"If i were an animal\" and written olivocab word Honest.",
+          "created_at": "02:37 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Homework",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Jam session and Olivocab",
+          "description": "Frame two sentences for the word Honest in the notebook.",
+          "created_at": "02:37 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu",
+          "description": "Telugu R2\n\"Aata\" lesson introduction done.",
+          "created_at": "03:32 PM"
+        }
+      ]
     }
   ]
 }
