@@ -1,7 +1,7 @@
 {
-  "date": "Wednesday, November 11, 2026",
-  "date_iso": "2026-11-11",
-  "last_updated": "11 Nov 2026, 10:41 PM IST",
+  "date": "Thursday, November 12, 2026",
+  "date_iso": "2026-11-12",
+  "last_updated": "12 Nov 2026, 12:22 AM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -11,88 +11,7 @@
       "icon": "🎒",
       "avatar": "images/sreedyuti.jpg",
       "theme": "purple",
-      "entries": [
-        {
-          "subject": "BIOLOGY",
-          "type": "Classwork",
-          "teacher": "GAYATHRI DEVI R",
-          "topic": "Life cycle of a frog",
-          "description": "Explained the life cycle of a frog",
-          "created_at": "03:18 PM"
-        },
-        {
-          "subject": "BIOLOGY",
-          "type": "Homework",
-          "teacher": "GAYATHRI DEVI R",
-          "topic": "Life cycle of a frog",
-          "description": "Read the text book",
-          "created_at": "03:18 PM"
-        },
-        {
-          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
-          "type": "Classwork",
-          "teacher": "MADHURIMA YERRAPRAGADA",
-          "topic": "Lab activity:",
-          "description": "Students practiced using HTML elements by creating a simple webpage on “Types of Robots”. They used heading tags (<h1> to <h6>), paragraph (<p>), bold (<b>), italic (<i>), line break (<br>), and horizontal rule (<hr>) tags to structure and format the webpage.",
-          "created_at": "02:15 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Classwork",
-          "teacher": "PRASUNA DESABHOTLA",
-          "topic": "",
-          "description": "Textbook pg 149 problems 4,5,6 are done",
-          "created_at": "02:07 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Homework",
-          "teacher": "PRASUNA DESABHOTLA",
-          "topic": "",
-          "description": "Workbook- Perimeter and Areas  page 7  and 8, problems 1,2 and 3",
-          "created_at": "02:07 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Classwork",
-          "teacher": "ANSHA HIBA K M",
-          "topic": "English",
-          "description": "Completed the lesson- Eat from the Edges\nProverbs",
-          "created_at": "03:48 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Homework",
-          "teacher": "ANSHA HIBA K M",
-          "topic": "English",
-          "description": "Gentle Reminder: Complete the HW in the CB (pg no: 73)",
-          "created_at": "03:48 PM"
-        },
-        {
-          "subject": "R2 - TELUGU/HINDI",
-          "type": "Classwork",
-          "teacher": "MAHALINGAPPAGARI MADHAVI",
-          "topic": "R2 Telugu",
-          "description": "Conducted dictation ls-6 and 7th",
-          "created_at": "04:40 PM"
-        },
-        {
-          "subject": "R2 - TELUGU/HINDI",
-          "type": "Homework",
-          "teacher": "MAHALINGAPPAGARI MADHAVI",
-          "topic": "R2 Telugu",
-          "description": "Dictation లో తప్పుగా రాసిన పదాలను ఐదుసార్లు రాసుకుని రావాలి",
-          "created_at": "04:40 PM"
-        },
-        {
-          "subject": "SOCIAL SCIENCE",
-          "type": "Classwork",
-          "teacher": "UTKARSHA SRIVASTAVA",
-          "topic": "Grassroots Democracy: Part 2",
-          "description": "Explained Bal Panchayat.",
-          "created_at": "02:55 PM"
-        }
-      ]
+      "entries": []
     },
     {
       "key": "sreekriti",
@@ -102,56 +21,7 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": [
-        {
-          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
-          "type": "Classwork",
-          "teacher": "VIMALA V",
-          "topic": "",
-          "description": "Ch-6: Brain Games – Students practised the Chicken and Ball Game using ScratchJr. They programmed the chicken to jump and escape from the moving ball, learning about events, movement and sequencing through an enjoyable hands-on activity.\nKindly find the attached screenshots of the ScratchJr program/activity.",
-          "created_at": "03:46 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Classwork",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "Fun with numbers",
-          "description": "Completed tb Pg no 87- 90",
-          "created_at": "11:23 AM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Homework",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "Fun with numbers",
-          "description": "Complete project work from tb Pg 90 and sn be submitted by monday",
-          "created_at": "11:23 AM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Classwork",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "Olivocab",
-          "description": "Written new word in Olivocab- \" Energy\"",
-          "created_at": "11:22 AM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Homework",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "Olivocab",
-          "description": "Frame two more sentences for the word Energy in notebook.",
-          "created_at": "11:22 AM"
-        },
-        {
-          "subject": "R2 - TELUGU/HINDI",
-          "type": "Classwork",
-          "teacher": "RASHMI NOWLAKHA",
-          "topic": "R2- Hindi",
-          "description": "Period 1- Classwork- workbook, page number 20,21 done.\nPeriod 2- classwork- Workbook, page number 22,23 done.",
-          "created_at": "03:07 PM"
-        }
-      ]
+      "entries": []
     }
   ]
 }
