@@ -1,7 +1,7 @@
 {
   "date": "Thursday, November 12, 2026",
   "date_iso": "2026-11-12",
-  "last_updated": "12 Nov 2026, 01:14 AM IST",
+  "last_updated": "12 Nov 2026, 07:11 PM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -11,7 +11,80 @@
       "icon": "🎒",
       "avatar": "images/sreedyuti.jpg",
       "theme": "purple",
-      "entries": []
+      "entries": [
+        {
+          "subject": "General",
+          "type": "Homework",
+          "teacher": "HYMAVATHI TALLAPUDI",
+          "topic": "Physics",
+          "description": "Explained the concept types of thermometers.",
+          "created_at": "12:34 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Classwork",
+          "teacher": "PRASUNA DESABHOTLA",
+          "topic": "Perimeter and Areas",
+          "description": "Textbook pg 149 completed figure it out.\nWorkbook pg 9 and 10",
+          "created_at": "02:44 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Homework",
+          "teacher": "PRASUNA DESABHOTLA",
+          "topic": "Perimeter and Areas",
+          "description": "Workbook page 10, 11 of Perimeter and Areas chapter",
+          "created_at": "02:44 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "",
+          "description": "Error Correction Activity\nBiography- Hints in the CW (HW for Monday)",
+          "created_at": "02:36 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Homework",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "",
+          "description": "REMINDER:\nThose selected for the role-play are kindly requested to come prepared for the activity.",
+          "created_at": "02:36 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "MAHALINGAPPAGARI MADHAVI",
+          "topic": "R2 Telugu",
+          "description": "Taught lesson 8",
+          "created_at": "03:00 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Homework",
+          "teacher": "MAHALINGAPPAGARI MADHAVI",
+          "topic": "R2 Telugu",
+          "description": "Prepare for the sliptest lesson 6,7 tb part",
+          "created_at": "03:00 PM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Classwork",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "GRASSROOTS DEMOCRACY: PART 2",
+          "description": "Expalined about Panchayat Samiti, Zila Parishad and Arthashastra.\nAfter Explanation a quiz was conducted in the class.",
+          "created_at": "02:15 PM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Homework",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "GRASSROOTS DEMOCRACY: PART 2",
+          "description": "Read the Chapter.",
+          "created_at": "02:15 PM"
+        }
+      ]
     },
     {
       "key": "sreekriti",
@@ -21,7 +94,40 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": []
+      "entries": [
+        {
+          "subject": "MATHEMATICS",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Fun with Numbers",
+          "description": "Completed number names from 50-80 in the notebook",
+          "created_at": "01:52 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Food",
+          "description": "Completed wb Pg no 3-5",
+          "created_at": "01:51 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Homework",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Food",
+          "description": "Complete colouring on Wb Pg no 3 and 4",
+          "created_at": "01:51 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "RASHMI NOWLAKHA",
+          "topic": "Hindi R2",
+          "description": "Hindi R2 - workbook page number 24, 25 done.",
+          "created_at": "03:29 PM"
+        }
+      ]
     }
   ]
 }
