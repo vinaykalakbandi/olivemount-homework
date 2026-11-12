@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Olivemount Daily Homework Board</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,38 +23,48 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8">
     
     <!-- Header -->
-    <header class="bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-slate-200/90 mb-7 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+    <header class="bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-slate-200/90 mb-7 flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
       <div>
         <div class="flex items-center gap-2 mb-1.5 flex-wrap">
           <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             Live Daily Sync
           </span>
-          <span class="text-xs text-slate-500 font-medium">Auto-synced at 5:10 PM, 5:35 PM & 5:55 PM IST (Mon-Fri)</span>
+          <span class="text-xs text-slate-500 font-medium">Auto-syncs at 5:10 PM & 5:40 PM IST (Mon-Fri)</span>
         </div>
         <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Olivemount Homework Board</h1>
         <p class="text-sm text-slate-500 mt-0.5">Separate side-by-side homework lists for Sreedyuti & Sreekriti with real-time Google Sheet tracking</p>
       </div>
 
-      <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/70 w-full md:w-auto text-left md:text-right space-y-2.5">
+      <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/70 w-full md:w-auto text-left md:text-right space-y-3">
         <div>
-          <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Date</p>
-          <p class="text-base font-bold text-slate-800 mt-0.5" id="display-date">Thursday, October 29, 2026</p>
-          <p class="text-xs text-slate-500 mt-0.5" id="last-updated-text">Last synced: 29 Oct 2026, 11:06 PM IST</p>
+          <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Homework Date</p>
+          <div class="flex items-center md:justify-end gap-2 mt-0.5 flex-wrap">
+            <p class="text-base sm:text-lg font-extrabold text-slate-900" id="display-date">Loading...</p>
+            <span id="today-badge" class="hidden text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">Today</span>
+          </div>
+          <p class="text-xs text-slate-500 mt-0.5" id="last-updated-text">Checking latest sync...</p>
         </div>
 
-        <div class="flex items-center md:justify-end gap-2 text-xs text-slate-500 pt-1.5 border-t border-slate-200/70">
-          <span id="sync-status-indicator" class="w-2 h-2 rounded-full bg-slate-400"></span>
-          <span id="sync-status-text">Checking sheet...</span>
-          <button onclick="fetchTasksFromSheet(true)" title="Force refresh status from Google Sheet" class="text-[11px] font-medium px-2 py-0.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-slate-600 transition-all flex items-center gap-1 cursor-pointer">
-            <span>🔄</span> Sheet
+        <!-- Action Buttons -->
+        <div class="flex items-center md:justify-end gap-2 flex-wrap">
+          <button id="reload-dashboard-btn" onclick="forceReloadDashboard()" title="Refresh homework and checkboxes from cloud" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-white hover:bg-slate-100 border border-slate-300 text-slate-700 shadow-sm active:scale-95 transition-all cursor-pointer">
+            <span id="reload-btn-icon">🔄</span>
+            <span id="reload-btn-text">Refresh</span>
+          </button>
+          
+          <button id="trigger-portal-sync-btn" onclick="triggerSchoolPortalSync()" title="Scrape MyClassBoard school portal right now" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-violet-600 hover:bg-violet-700 text-white shadow-sm active:scale-95 transition-all cursor-pointer">
+            <span id="trigger-btn-icon">⚡</span>
+            <span id="trigger-btn-text">Sync with School</span>
           </button>
         </div>
 
-        <div class="pt-1 flex items-center md:justify-end gap-2">
-          <button id="trigger-portal-sync-btn" onclick="triggerSchoolPortalSync()" title="Scrape MyClassBoard school portal right now" class="w-full md:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-violet-600 hover:bg-violet-700 active:scale-95 text-white shadow-sm transition-all cursor-pointer">
-            <span id="trigger-btn-icon">⚡</span>
-            <span id="trigger-btn-text">Sync with School Now</span>
+        <!-- Google Sheet Status -->
+        <div class="flex items-center md:justify-end gap-2 text-xs text-slate-500 pt-1 border-t border-slate-200/70">
+          <span id="sync-status-indicator" class="w-2 h-2 rounded-full bg-slate-400"></span>
+          <span id="sync-status-text">Checking sheet...</span>
+          <button onclick="fetchTasksFromSheet(true)" title="Check Sheet Status" class="text-[11px] font-medium text-violet-600 hover:underline cursor-pointer">
+            Check Status
           </button>
         </div>
       </div>
@@ -66,7 +79,7 @@
           </div>
           <div>
             <h3 class="font-extrabold text-sm sm:text-base text-white">Scraping Olivemount Portal Now</h3>
-            <p class="text-xs text-purple-100 mt-0.5" id="sync-progress-subtext">Logging into student accounts and extracting latest homework... Page will refresh automatically.</p>
+            <p class="text-xs text-purple-100 mt-0.5" id="sync-progress-subtext">Logging into student accounts and extracting latest homework... Dashboard will update automatically.</p>
           </div>
         </div>
         <div class="flex items-center gap-3 w-full sm:w-auto justify-end">
@@ -106,7 +119,10 @@
         </div>
 
         <div id="cards-sreedyuti" class="space-y-4">
-          <!-- Cards rendered dynamically -->
+          <div class="bg-white/80 rounded-3xl p-8 text-center border border-purple-100 shadow-sm">
+            <span class="animate-spin inline-block text-2xl mb-2">⏳</span>
+            <p class="text-xs text-slate-500">Loading Sreedyuti's homework...</p>
+          </div>
         </div>
 
       </section>
@@ -132,22 +148,30 @@
         </div>
 
         <div id="cards-sreekriti" class="space-y-4">
-          <!-- Cards rendered dynamically -->
+          <div class="bg-white/80 rounded-3xl p-8 text-center border border-pink-100 shadow-sm">
+            <span class="animate-spin inline-block text-2xl mb-2">⏳</span>
+            <p class="text-xs text-slate-500">Loading Sreekriti's homework...</p>
+          </div>
         </div>
 
       </section>
 
     </div>
 
-    <!-- Bottom Sync Bar -->
+    <!-- Bottom Settings Bar -->
     <div class="mt-8 bg-white rounded-3xl p-4 sm:p-5 border border-slate-200/90 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 shadow-sm">
       <div class="flex items-center gap-2">
         <span class="text-emerald-600 font-bold">📊 Google Sheet Sync:</span>
         <span id="webhook-hint">Two-way sync active with Olivemount Daily Homework Tracker</span>
       </div>
-      <button onclick="promptWebhookUrl()" class="px-3.5 py-1.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 font-medium transition-all">
-        ⚙️ Settings / Sheet Webhook
-      </button>
+      <div class="flex items-center gap-2 flex-wrap">
+        <button onclick="openSyncModal()" class="px-3 py-1.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 font-medium transition-all cursor-pointer">
+          🔑 Cloud Sync Token
+        </button>
+        <button onclick="promptWebhookUrl()" class="px-3 py-1.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 font-medium transition-all cursor-pointer">
+          ⚙️ Sheet Webhook
+        </button>
+      </div>
     </div>
 
     <!-- Footer -->
@@ -157,17 +181,86 @@
 
   </div>
 
+  <!-- In-Page Modal: 1-Click Sync Setup (No browser popup blocking) -->
+  <div id="sync-token-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-slate-100 space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-2xl bg-violet-100 text-violet-700 flex items-center justify-center text-lg font-bold">
+            ⚡
+          </div>
+          <div>
+            <h3 class="text-base font-extrabold text-slate-900">1-Click School Sync</h3>
+            <p class="text-xs text-slate-500">Trigger Playwright scraper directly</p>
+          </div>
+        </div>
+        <button onclick="closeSyncModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center text-sm font-bold cursor-pointer">✕</button>
+      </div>
+      
+      <p class="text-xs text-slate-600 leading-relaxed">
+        To scrape Olivemount MyClassBoard directly with 1 tap, paste your GitHub Personal Access Token once. It will stay saved securely in this browser.
+      </p>
+
+      <div class="space-y-1.5">
+        <label class="text-[11px] font-bold uppercase tracking-wider text-slate-400">GitHub Personal Access Token</label>
+        <input type="password" id="modal-gh-token-input" placeholder="ghp_..." class="w-full text-xs font-mono px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500">
+        <p class="text-[11px] text-slate-400">Needs <code class="text-violet-600 font-semibold">repo</code> and <code class="text-violet-600 font-semibold">workflow</code> permissions.</p>
+      </div>
+
+      <div class="pt-2 flex flex-col gap-2">
+        <button onclick="saveTokenAndTriggerSync()" class="w-full py-2.5 px-4 rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-bold text-xs shadow-sm active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <span>⚡ Save & Sync School Portal Now</span>
+        </button>
+        <div class="flex items-center justify-between pt-1 text-xs">
+          <a href="https://github.com/vinaykalakbandi/olivemount-homework/actions/workflows/update_homework.yml" target="_blank" class="text-violet-600 hover:underline font-medium">
+            Open GitHub Actions manually ↗
+          </a>
+          <button onclick="clearSavedToken()" id="clear-token-btn" class="text-rose-500 hover:underline font-medium hidden cursor-pointer">
+            Remove saved token
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Popup -->
+  <div id="toast-notification" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 pointer-events-none transition-all duration-300 bg-slate-900 text-white px-4 py-3 rounded-2xl shadow-xl flex items-center gap-3 text-xs max-w-sm">
+    <span id="toast-icon">ℹ️</span>
+    <span id="toast-msg">Notification</span>
+  </div>
+
   <script>
     // Configurable default webhook URL (Google Apps Script Web App)
     const DEFAULT_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzKKXyacPIxIPuvNvp7cAglDDuD9YmSIaJQ0PZ2X6dFEUSoghixnjkJOhf-q0nrXwSpoA/exec';
-    let CURRENT_DATE_STR = '2026-10-29';
+    let CURRENT_DATE_STR = '';
 
     function getStoragePrefix() {
-      return 'omgs_hw_' + CURRENT_DATE_STR + '_';
+      return 'omgs_hw_' + (CURRENT_DATE_STR || 'default') + '_';
     }
 
     function getActiveWebhookUrl() {
       return localStorage.getItem('omgs_sheet_webhook_url') || DEFAULT_WEBHOOK_URL;
+    }
+
+    // Toast notification helper
+    let toastTimeout = null;
+    function showToast(msg, icon = 'ℹ️', duration = 3200) {
+      const toast = document.getElementById('toast-notification');
+      const toastMsg = document.getElementById('toast-msg');
+      const toastIcon = document.getElementById('toast-icon');
+      if (!toast || !toastMsg) return;
+
+      toastMsg.textContent = msg;
+      if (toastIcon) toastIcon.textContent = icon;
+
+      toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, duration);
     }
 
     window.addEventListener('DOMContentLoaded', () => {
@@ -176,9 +269,32 @@
       loadHomeworkData();
     });
 
+    async function forceReloadDashboard() {
+      const btn = document.getElementById('reload-dashboard-btn');
+      const icon = document.getElementById('reload-btn-icon');
+      const text = document.getElementById('reload-btn-text');
+
+      if (icon) icon.className = "animate-spin inline-block";
+      if (text) text.textContent = "Loading...";
+      if (btn) btn.disabled = true;
+
+      try {
+        await loadHomeworkData();
+        showToast('Dashboard refreshed with latest homework!', '✅');
+      } catch (err) {
+        showToast('Refresh failed: ' + err.message, '⚠️');
+      } finally {
+        setTimeout(() => {
+          if (icon) icon.className = "";
+          if (text) text.textContent = "Refresh";
+          if (btn) btn.disabled = false;
+        }, 500);
+      }
+    }
+
     async function loadHomeworkData() {
       try {
-        const res = await fetch('data/homework.json?v=' + Date.now());
+        const res = await fetch('data/homework.json?v=' + Date.now(), { cache: 'no-store' });
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const data = await res.json();
         
@@ -188,6 +304,7 @@
           }
           if (data.date_iso) {
             CURRENT_DATE_STR = data.date_iso;
+            updateDateBadge(data.date_iso);
           }
           if (data.last_updated) {
             document.getElementById('last-updated-text').textContent = 'Last synced: ' + data.last_updated;
@@ -197,9 +314,29 @@
         }
       } catch (e) {
         console.warn('Error loading data/homework.json:', e);
+        document.getElementById('display-date').textContent = 'Error loading homework';
       } finally {
         restoreLocalCheckboxStates();
         fetchTasksFromSheet();
+      }
+    }
+
+    function updateDateBadge(dateIso) {
+      const badge = document.getElementById('today-badge');
+      if (!badge) return;
+      try {
+        const todayIso = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' });
+        if (dateIso === todayIso) {
+          badge.textContent = "Today's Homework";
+          badge.className = "text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200";
+          badge.classList.remove('hidden');
+        } else {
+          badge.textContent = "Previous Date";
+          badge.className = "text-[11px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200";
+          badge.classList.remove('hidden');
+        }
+      } catch (e) {
+        badge.classList.add('hidden');
       }
     }
 
@@ -335,7 +472,7 @@
       });
     }
 
-    // ================= School Portal On-Demand Scraper Trigger =================
+    // ================= School Portal Scraper Trigger & Modal =================
     let syncInterval = null;
 
     function checkActiveSyncCountdown() {
@@ -350,6 +487,50 @@
       }
     }
 
+    function openSyncModal() {
+      const modal = document.getElementById('sync-token-modal');
+      const input = document.getElementById('modal-gh-token-input');
+      const clearBtn = document.getElementById('clear-token-btn');
+      const saved = localStorage.getItem('omgs_gh_token');
+      if (input) input.value = saved || '';
+      if (clearBtn) {
+        if (saved) clearBtn.classList.remove('hidden');
+        else clearBtn.classList.add('hidden');
+      }
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeSyncModal() {
+      const modal = document.getElementById('sync-token-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function saveTokenAndTriggerSync() {
+      const input = document.getElementById('modal-gh-token-input');
+      const token = input ? input.value.trim() : '';
+      if (!token) {
+        showToast('Please enter your GitHub token', '⚠️');
+        return;
+      }
+      if (!token.startsWith('ghp_')) {
+        showToast('Token should start with ghp_...', '⚠️');
+        return;
+      }
+      localStorage.setItem('omgs_gh_token', token);
+      closeSyncModal();
+      showToast('GitHub token saved! Syncing school portal...', '⚡');
+      triggerSchoolPortalSync();
+    }
+
+    function clearSavedToken() {
+      localStorage.removeItem('omgs_gh_token');
+      const input = document.getElementById('modal-gh-token-input');
+      if (input) input.value = '';
+      const clearBtn = document.getElementById('clear-token-btn');
+      if (clearBtn) clearBtn.classList.add('hidden');
+      showToast('Saved token removed.', 'ℹ️');
+    }
+
     async function triggerSchoolPortalSync() {
       const btn = document.getElementById('trigger-portal-sync-btn');
       const icon = document.getElementById('trigger-btn-icon');
@@ -359,59 +540,19 @@
       const lastTrigger = localStorage.getItem('omgs_last_portal_sync_trigger');
       if (lastTrigger && (Date.now() - parseInt(lastTrigger)) < 90000) {
         const remaining = Math.ceil((90000 - (Date.now() - parseInt(lastTrigger))) / 1000);
-        alert(`A school portal sync was already started! Please wait ${remaining}s for it to finish.`);
+        showToast(`Sync already in progress! Please wait ${remaining}s.`, '⏳');
         return;
       }
 
-      // Check if user has saved a GitHub Token locally in browser
       let ghToken = localStorage.getItem('omgs_gh_token');
 
-      // If GitHub Token is available, trigger GitHub directly (instant, bypasses Google permissions)
-      if (ghToken) {
-        if (btn) {
-          btn.disabled = true;
-          btn.classList.add('opacity-70', 'cursor-not-allowed');
-        }
-        if (icon) icon.className = "animate-spin inline-block";
-        if (text) text.textContent = "Connecting to GitHub...";
-
-        try {
-          const resp = await fetch("https://api.github.com/repos/vinaykalakbandi/olivemount-homework/actions/workflows/update_homework.yml/dispatches", {
-            method: "POST",
-            headers: {
-              "Authorization": "Bearer " + ghToken,
-              "Accept": "application/vnd.github+json"
-            },
-            body: JSON.stringify({ ref: "main" })
-          });
-
-          if (resp.status === 204 || resp.status === 200) {
-            localStorage.setItem('omgs_last_portal_sync_trigger', Date.now());
-            startSyncProgressCountdown(75);
-            return;
-          } else if (resp.status === 401) {
-            localStorage.removeItem('omgs_gh_token');
-            resetTriggerButton();
-            alert("The saved GitHub token was invalid. Please configure your token again.");
-            return;
-          } else {
-            console.warn("Direct dispatch returned status:", resp.status);
-          }
-        } catch (e) {
-          console.warn("Direct fetch error:", e);
-        }
+      // If no token is saved yet, open the modal dialog directly
+      if (!ghToken) {
+        openSyncModal();
+        return;
       }
 
-      // Fallback: Trigger via Google Apps Script Web App
-      triggerViaAppsScript();
-    }
-
-    function triggerViaAppsScript() {
-      const btn = document.getElementById('trigger-portal-sync-btn');
-      const icon = document.getElementById('trigger-btn-icon');
-      const text = document.getElementById('trigger-btn-text');
-      const webhookUrl = getActiveWebhookUrl();
-
+      // If GitHub Token is available, dispatch directly to GitHub Actions API
       if (btn) {
         btn.disabled = true;
         btn.classList.add('opacity-70', 'cursor-not-allowed');
@@ -419,46 +560,36 @@
       if (icon) icon.className = "animate-spin inline-block";
       if (text) text.textContent = "Connecting...";
 
-      const callbackName = 'portalSyncCallback_' + Math.floor(Math.random() * 1000000);
-      let timedOut = false;
+      try {
+        const resp = await fetch("https://api.github.com/repos/vinaykalakbandi/olivemount-homework/actions/workflows/update_homework.yml/dispatches", {
+          method: "POST",
+          headers: {
+            "Authorization": "Bearer " + ghToken,
+            "Accept": "application/vnd.github+json"
+          },
+          body: JSON.stringify({ ref: "main" })
+        });
 
-      const timeoutHandle = setTimeout(() => {
-        timedOut = true;
-        delete window[callbackName];
-        const scriptEl = document.getElementById('jsonp-portal-trigger');
-        if (scriptEl) scriptEl.remove();
-        resetTriggerButton();
-        showSyncFallbackModal("Connection timed out. Would you like to enter your GitHub token for 1-click sync or open GitHub Actions?");
-      }, 9000);
-
-      window[callbackName] = function(response) {
-        clearTimeout(timeoutHandle);
-        delete window[callbackName];
-        const scriptEl = document.getElementById('jsonp-portal-trigger');
-        if (scriptEl) scriptEl.remove();
-
-        if (response && response.success) {
+        if (resp.status === 204 || resp.status === 200) {
           localStorage.setItem('omgs_last_portal_sync_trigger', Date.now());
           startSyncProgressCountdown(75);
-        } else if (response && response.message && (response.message.includes('already started') || response.message.includes('recently'))) {
+          showToast('Scraper started! Extracting homework...', '🚀');
+          return;
+        } else if (resp.status === 401 || resp.status === 403) {
           resetTriggerButton();
-          alert(response.message);
+          showToast('Saved token is expired or unauthorized.', '❌');
+          openSyncModal();
+          return;
         } else {
           resetTriggerButton();
-          showSyncFallbackModal(response && response.message ? response.message : "Google Apps Script has not yet been configured with the trigger handler.");
+          showToast('GitHub returned HTTP ' + resp.status, '⚠️');
+          openSyncModal();
         }
-      };
-
-      const script = document.createElement('script');
-      script.id = 'jsonp-portal-trigger';
-      script.src = `${webhookUrl}${webhookUrl.includes('?') ? '&' : '?'}action=triggerSync&callback=${callbackName}&_=${Date.now()}`;
-      script.onerror = function() {
-        clearTimeout(timeoutHandle);
-        delete window[callbackName];
+      } catch (e) {
         resetTriggerButton();
-        showSyncFallbackModal("Could not connect to Google Apps Script.");
-      };
-      document.body.appendChild(script);
+        showToast('Network error triggering scraper.', '⚠️');
+        openSyncModal();
+      }
     }
 
     function resetTriggerButton() {
@@ -470,7 +601,7 @@
         btn.classList.remove('opacity-70', 'cursor-not-allowed');
       }
       if (icon) icon.className = "";
-      if (text) text.textContent = "Sync with School Now";
+      if (text) text.textContent = "Sync with School";
     }
 
     function startSyncProgressCountdown(totalSeconds) {
@@ -494,33 +625,16 @@
 
         if (remaining <= 0) {
           clearInterval(syncInterval);
-          if (countdownText) countdownText.textContent = "Done! Reloading...";
+          if (countdownText) countdownText.textContent = "Done! Updating...";
           localStorage.removeItem('omgs_last_portal_sync_trigger');
+          if (banner) banner.classList.add('hidden');
+          resetTriggerButton();
           setTimeout(() => {
-            window.location.reload();
-          }, 1200);
+            loadHomeworkData();
+            showToast('Homework updated from school portal!', '🎉');
+          }, 1500);
         }
       }, 1000);
-    }
-
-    function showSyncFallbackModal(msg) {
-      const fallbackUrl = "https://github.com/vinaykalakbandi/olivemount-homework/actions/workflows/update_homework.yml";
-      const userChoice = confirm(
-        "⚡ 1-Click Sync:\n\n" +
-        "Would you like to connect your GitHub Token for direct 1-click sync from this device?\n\n" +
-        "• Click 'OK' to enter your GitHub token (only needed once per device)\n" +
-        "• Click 'Cancel' to open GitHub Actions and click 'Run workflow'"
-      );
-      if (userChoice) {
-        const entered = prompt("Paste your GitHub Personal Access Token (starts with ghp_...):");
-        if (entered && entered.trim().startsWith("ghp_")) {
-          localStorage.setItem('omgs_gh_token', entered.trim());
-          alert("GitHub Token saved! Triggering cloud sync now...");
-          triggerSchoolPortalSync();
-        }
-      } else {
-        window.open(fallbackUrl, '_blank');
-      }
     }
 
     // Two-Way Sync: Pull latest completion status from Google Sheet across all devices
@@ -540,7 +654,6 @@
         '&callback=' + callbackName +
         '&t=' + Date.now();
 
-      // Clean up previous JSONP script if any
       const existingScript = document.getElementById('jsonp-sheet-sync');
       if (existingScript) existingScript.remove();
 
@@ -556,9 +669,10 @@
           applySheetStatuses(response.tasks);
           if (indicator) indicator.className = "w-2 h-2 rounded-full bg-emerald-500";
           if (text) text.textContent = "Live with Google Sheet";
+          if (isManual) showToast('Checkboxes synced with Google Sheet!', '✅');
         } else {
-          if (indicator) indicator.className = "w-2 h-2 rounded-full bg-amber-400";
-          if (text) text.textContent = "Sheet sync ready";
+          if (indicator) indicator.className = "w-2 h-2 rounded-full bg-emerald-500";
+          if (text) text.textContent = "Connected to Google Sheet";
         }
       };
 
@@ -569,7 +683,7 @@
         clearTimeout(timeoutHandle);
         delete window[callbackName];
         if (indicator) indicator.className = "w-2 h-2 rounded-full bg-emerald-500";
-        if (text) text.textContent = "Live with Google Sheet";
+        if (text) text.textContent = "Connected to Google Sheet";
       };
 
       timeoutHandle = setTimeout(() => {
@@ -679,9 +793,11 @@
       }).then(() => {
         if (indicator) indicator.className = "w-2 h-2 rounded-full bg-emerald-500";
         if (text) text.textContent = "Saved to Sheet (" + payload.timestamp + ")";
+        showToast(`Marked ${payload.status} in Google Sheet`, payload.status === 'Done' ? '✨' : '↩️');
       }).catch(err => {
         if (indicator) indicator.className = "w-2 h-2 rounded-full bg-rose-500";
         if (text) text.textContent = "Sync error";
+        showToast('Sheet sync failed: ' + err.message, '⚠️');
       });
     }
 
@@ -709,7 +825,7 @@
         localStorage.setItem('omgs_sheet_webhook_url', entered.trim());
         checkWebhookConfig();
         fetchTasksFromSheet(true);
-        alert("Google Sheet Webhook configured! Checkbox taps will now log directly to your spreadsheet.");
+        showToast("Google Sheet Webhook updated!", "✅");
       }
     }
 
