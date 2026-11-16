@@ -1,7 +1,7 @@
 {
-  "date": "Monday, November 16, 2026",
-  "date_iso": "2026-11-16",
-  "last_updated": "16 Nov 2026, 07:36 PM IST",
+  "date": "Tuesday, November 17, 2026",
+  "date_iso": "2026-11-17",
+  "last_updated": "17 Nov 2026, 02:43 AM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -11,40 +11,7 @@
       "icon": "🎒",
       "avatar": "images/sreedyuti.jpg",
       "theme": "purple",
-      "entries": [
-        {
-          "subject": "BIOLOGY",
-          "type": "Classwork",
-          "teacher": "GAYATHRI DEVI R",
-          "topic": "Notes",
-          "description": "Completion of work book notes",
-          "created_at": "03:12 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Classwork",
-          "teacher": "PRASUNA DESABHOTLA",
-          "topic": "Perimeter and Areas",
-          "description": "Workbook pg 12 and 13 done",
-          "created_at": "01:45 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Homework",
-          "teacher": "PRASUNA DESABHOTLA",
-          "topic": "Perimeter and Areas",
-          "description": "Workbook pg 13 and pg 14 of Perimeter and Areas",
-          "created_at": "01:45 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Classwork",
-          "teacher": "ANSHA HIBA K M",
-          "topic": "English",
-          "description": "Types of Adverbs- CB exercises",
-          "created_at": "03:33 PM"
-        }
-      ]
+      "entries": []
     },
     {
       "key": "sreekriti",
@@ -54,64 +21,7 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": [
-        {
-          "subject": "EVS",
-          "type": "Classwork",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "Plants around us",
-          "description": "Completed wb Pg no 3-6",
-          "created_at": "01:34 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Classwork",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "Fun with Numbers",
-          "description": "Completed tb Pg no 93,94 and 96",
-          "created_at": "01:38 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Homework",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "Fun with Numbers",
-          "description": "Complete tb Pg no 95 and 97",
-          "created_at": "01:38 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Classwork",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "A visit to the farm",
-          "description": "Completed wb Pg no 6-7",
-          "created_at": "01:37 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Homework",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "A visit to the farm",
-          "description": "Complete Wb Pg no7 qst-f and pg 8 bit VIII and IX",
-          "created_at": "01:37 PM"
-        },
-        {
-          "subject": "R2 - TELUGU/HINDI",
-          "type": "Classwork",
-          "teacher": "RASHMI NOWLAKHA",
-          "topic": "Hindi R2",
-          "description": "Hindi R2 - Workbook page no. 28,29 done",
-          "created_at": "02:48 PM"
-        },
-        {
-          "subject": "R3 - TELUGU/HINDI",
-          "type": "Classwork",
-          "teacher": "VIJAYA KUMARI MEDAPATI",
-          "topic": "Telugu",
-          "description": "Telugu R3\nWorkbook pg no: 3, 4 done.",
-          "created_at": "03:32 PM"
-        }
-      ]
+      "entries": []
     }
   ]
 }
