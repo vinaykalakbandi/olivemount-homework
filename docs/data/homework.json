@@ -1,7 +1,7 @@
 {
   "date": "Tuesday, November 17, 2026",
   "date_iso": "2026-11-17",
-  "last_updated": "17 Nov 2026, 03:52 AM IST",
+  "last_updated": "17 Nov 2026, 05:10 PM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -11,7 +11,72 @@
       "icon": "🎒",
       "avatar": "images/sreedyuti.jpg",
       "theme": "purple",
-      "entries": []
+      "entries": [
+        {
+          "subject": "General",
+          "type": "Homework",
+          "teacher": "SUBINA A K",
+          "topic": "Hindi R2",
+          "description": "पाठ -7 अभ्यास कार्य ( लिखित)\nHW:Do pg no. 1 in Workbook.",
+          "created_at": "01:45 PM"
+        },
+        {
+          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
+          "type": "Classwork",
+          "teacher": "MADHURIMA YERRAPRAGADA",
+          "topic": "",
+          "description": "Introduced CSS (Cascading Style Sheets), explained its importance in web designing, and demonstrated the basic syntax of CSS with suitable examples.",
+          "created_at": "04:02 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "",
+          "description": "Role Play- (Ls: Eat From the Edges)\nDirect and Indirect Speech (Introduction)",
+          "created_at": "03:31 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Homework",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "",
+          "description": "Dear Students,\nThis is a gentle reminder about tomorrow’s SEA activity – “Storytelling in Sign Language.” Kindly come prepared and be ready to participate enthusiastically.",
+          "created_at": "03:31 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "MAHALINGAPPAGARI MADHAVI",
+          "topic": "R2 Telugu",
+          "description": "Explained workbook part lesson 6",
+          "created_at": "10:19 AM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Homework",
+          "teacher": "MAHALINGAPPAGARI MADHAVI",
+          "topic": "R2 Telugu",
+          "description": "Complete Roman number 16\n(Interview with mother)",
+          "created_at": "10:19 AM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Classwork",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "Grassroots Democracy:Part 3",
+          "description": "Explained Urban local bodies and their functions",
+          "created_at": "12:31 PM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Homework",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "Grassroots Democracy:Part 3",
+          "description": "Prepare the chapter landforms and Life from the textbook.",
+          "created_at": "12:31 PM"
+        }
+      ]
     },
     {
       "key": "sreekriti",
@@ -21,7 +86,80 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": []
+      "entries": [
+        {
+          "subject": "EVS",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Plants around me",
+          "description": "completed wb exercises pg 5-9",
+          "created_at": "01:29 PM"
+        },
+        {
+          "subject": "EVS",
+          "type": "Homework",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Plants around me",
+          "description": "complete wb pg no 8 bit V",
+          "created_at": "01:29 PM"
+        },
+        {
+          "subject": "EVS",
+          "type": "Homework",
+          "teacher": "RASHMI NOWLAKHA",
+          "topic": "Hindi R2",
+          "description": "Hindi R2 -\nClasswork- Workbook page number 31,32 done.",
+          "created_at": "03:30 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Lina's family",
+          "description": "Completed wb exercises",
+          "created_at": "01:29 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "A visit to the farm",
+          "description": "Completed wb Pg no9-10",
+          "created_at": "02:26 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Homework",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "A visit to the farm",
+          "description": "Complete wb Pg 10-XII- i qst and Pg no 11- XIII",
+          "created_at": "02:26 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu",
+          "description": "Telugu R2\nWorkbook pg no: 10, 13 done.",
+          "created_at": "03:34 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Homework",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu",
+          "description": "Telugu R2 H/W\nComplete Workbook pg no:11,12",
+          "created_at": "03:34 PM"
+        },
+        {
+          "subject": "R3 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu",
+          "description": "Telugu R3\nWorkbook pg no: 6, 7, 8,done.",
+          "created_at": "03:38 PM"
+        }
+      ]
     }
   ]
 }
