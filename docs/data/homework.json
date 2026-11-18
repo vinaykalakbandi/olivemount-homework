@@ -1,7 +1,7 @@
 {
   "date": "Wednesday, November 18, 2026",
   "date_iso": "2026-11-18",
-  "last_updated": "18 Nov 2026, 02:37 AM IST",
+  "last_updated": "18 Nov 2026, 05:10 PM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -11,7 +11,96 @@
       "icon": "🎒",
       "avatar": "images/sreedyuti.jpg",
       "theme": "purple",
-      "entries": []
+      "entries": [
+        {
+          "subject": "BIOLOGY",
+          "type": "Classwork",
+          "teacher": "GAYATHRI DEVI R",
+          "topic": "Notes",
+          "description": "Completion of notes",
+          "created_at": "04:17 PM"
+        },
+        {
+          "subject": "BIOLOGY",
+          "type": "Homework",
+          "teacher": "SUBINA A K",
+          "topic": "Hindi R2",
+          "description": "CW: पाठ 7 ( प्रश्न - उत्तर)\nHW: Learn and practice Ls7 Q&A",
+          "created_at": "03:24 PM"
+        },
+        {
+          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
+          "type": "Classwork",
+          "teacher": "MADHURIMA YERRAPRAGADA",
+          "topic": "",
+          "description": "Revised CSS and its syntax, explained the different types of CSS, and discussed Inline CSS  with  examples.",
+          "created_at": "03:45 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Classwork",
+          "teacher": "PRASUNA DESABHOTLA",
+          "topic": "Perimeter and Areas",
+          "description": "Workbook pg 18, 19",
+          "created_at": "02:08 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Homework",
+          "teacher": "PRASUNA DESABHOTLA",
+          "topic": "Perimeter and Areas",
+          "description": "Workbook pg 20\nCase study question",
+          "created_at": "02:08 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "English",
+          "description": "Direct and Indirect Speech",
+          "created_at": "02:59 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Homework",
+          "teacher": "MAHALINGAPPAGARI MADHAVI",
+          "topic": "R2 Telugu",
+          "description": "",
+          "created_at": "01:58 PM"
+        },
+        {
+          "subject": "R3 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "PRIYANKA REDDY LINGAREDDY",
+          "topic": "R3 Telugu",
+          "description": "Wrote Ls.6 workbook exercises",
+          "created_at": "03:55 PM"
+        },
+        {
+          "subject": "R3 - TELUGU/HINDI",
+          "type": "Homework",
+          "teacher": "PRIYANKA REDDY LINGAREDDY",
+          "topic": "R3 Telugu",
+          "description": "Please complete the given homework in workbook",
+          "created_at": "03:55 PM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Classwork",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "Grassroots Democracy:Part 3",
+          "description": "Explained about Municipal corporation.",
+          "created_at": "01:30 PM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Homework",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "Grassroots Democracy:Part 3",
+          "description": "Complete Page No. 13 and 17 of your workbook.",
+          "created_at": "01:30 PM"
+        }
+      ]
     },
     {
       "key": "sreekriti",
@@ -21,7 +110,32 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": []
+      "entries": [
+        {
+          "subject": "General",
+          "type": "Homework",
+          "teacher": "RASHMI NOWLAKHA",
+          "topic": "Hindi R2",
+          "description": "Hindi R2 -\nClass work- Period 1- Workbook page number 33, 34,35 done.\nPeriod 2- workbook page number 36, 37 done.\nHomework- workbook, page number 43, read and write",
+          "created_at": "02:46 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu R2",
+          "description": "Workbook pg no: 16,17,18 and 19 done.",
+          "created_at": "03:17 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Homework",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu R2",
+          "description": "Telugu R2 H/W\nComplete Workbook pg no: 21, 22 (coloring).",
+          "created_at": "03:17 PM"
+        }
+      ]
     }
   ]
 }
