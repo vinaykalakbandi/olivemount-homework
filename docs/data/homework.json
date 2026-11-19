@@ -1,7 +1,7 @@
 {
   "date": "Thursday, November 19, 2026",
   "date_iso": "2026-11-19",
-  "last_updated": "19 Nov 2026, 02:18 AM IST",
+  "last_updated": "19 Nov 2026, 05:10 PM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -11,7 +11,112 @@
       "icon": "🎒",
       "avatar": "images/sreedyuti.jpg",
       "theme": "purple",
-      "entries": []
+      "entries": [
+        {
+          "subject": "General",
+          "type": "Homework",
+          "teacher": "SUBINA A K",
+          "topic": "Hindi R2",
+          "description": "पाठ -7 दक्षता आधारित प्रश्न - उत्तर",
+          "created_at": "03:11 PM"
+        },
+        {
+          "subject": "General",
+          "type": "Homework",
+          "teacher": "DAISY JAIRAJ",
+          "topic": "HINDI R3- पाठ-8 ईश्वर जो करता है अच्छा ही करता है",
+          "description": "CW- TEXTBOOK ex continued\nHW-Please revise questions answers, submit the book tomorrow for the checking",
+          "created_at": "02:40 PM"
+        },
+        {
+          "subject": "General",
+          "type": "Homework",
+          "teacher": "MAHALINGAPPAGARI MADHAVI",
+          "topic": "R2 Telugu",
+          "description": "Explained workbook part lesson 7",
+          "created_at": "12:04 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Classwork",
+          "teacher": "PRASUNA DESABHOTLA",
+          "topic": "Perimeter and Areas",
+          "description": "Fractions introduced",
+          "created_at": "02:51 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Homework",
+          "teacher": "PRASUNA DESABHOTLA",
+          "topic": "Perimeter and Areas",
+          "description": "Workbook pg 22 and 23 paper cuttings to be brought to class",
+          "created_at": "02:51 PM"
+        },
+        {
+          "subject": "PHYSICS",
+          "type": "Classwork",
+          "teacher": "HYMAVATHI TALLAPUDI",
+          "topic": "Physics",
+          "description": "Discussed the application based questions from the topic Temperature.",
+          "created_at": "02:30 PM"
+        },
+        {
+          "subject": "PHYSICS",
+          "type": "Homework",
+          "teacher": "HYMAVATHI TALLAPUDI",
+          "topic": "Physics",
+          "description": "Try to solve the graph question given in the workbook.",
+          "created_at": "02:30 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "",
+          "description": "Notes- Eat from the Edges\nTypes of Adverbs\nSign Language Storytelling Activity",
+          "created_at": "03:11 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Homework",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "",
+          "description": "Kindly complete any pending work in the CB and CW.",
+          "created_at": "03:11 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "MAHALINGAPPAGARI MADHAVI",
+          "topic": "R2 Telugu",
+          "description": "Explained workbook part lesson 7",
+          "created_at": "12:05 PM"
+        },
+        {
+          "subject": "R3 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "PRIYANKA REDDY LINGAREDDY",
+          "topic": "R3 Telugu",
+          "description": "Discussed and gave Ls.7. Workbook notes",
+          "created_at": "02:28 PM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Classwork",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "Landforms and Life",
+          "description": "Students completed Define the following, Very Short and Short Answers in the class.",
+          "created_at": "12:25 PM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Homework",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "Landforms and Life",
+          "description": "Complete Page No. 6, 13 and 17 of your workbook.",
+          "created_at": "12:25 PM"
+        }
+      ]
     },
     {
       "key": "sreekriti",
@@ -21,7 +126,64 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": []
+      "entries": [
+        {
+          "subject": "EVS",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Plants around us",
+          "description": "Completed wb pg no 11-13",
+          "created_at": "02:25 PM"
+        },
+        {
+          "subject": "EVS",
+          "type": "Homework",
+          "teacher": "RASHMI NOWLAKHA",
+          "topic": "Hindi R2",
+          "description": "Classwork- Workbook page number 39, 40, 41, 42 done.\nHomework- workbook, page number 44 Read and write.",
+          "created_at": "02:59 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "A visit to the farm",
+          "description": "Explained the concept of punctuation Completed wb Pg no 12-13",
+          "created_at": "02:24 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Homework",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "A visit to the farm",
+          "description": "Complete Pg 12 vit XV in the wb",
+          "created_at": "02:24 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu R2",
+          "description": "Workbook pg no: 25 done.",
+          "created_at": "03:30 PM"
+        },
+        {
+          "subject": "R3 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu R3",
+          "description": "Workbook pg no: 10, 11 done.",
+          "created_at": "03:35 PM"
+        },
+        {
+          "subject": "R3 - TELUGU/HINDI",
+          "type": "Homework",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu R3",
+          "description": "Telugu R3 H/W\nComplete Workbook pg no:11 (coloring)",
+          "created_at": "03:35 PM"
+        }
+      ]
     }
   ]
 }
