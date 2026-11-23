@@ -1,7 +1,7 @@
 {
-  "date": "Saturday, November 21, 2026",
-  "date_iso": "2026-11-21",
-  "last_updated": "21 Nov 2026, 02:04 AM IST",
+  "date": "Monday, November 23, 2026",
+  "date_iso": "2026-11-23",
+  "last_updated": "23 Nov 2026, 05:10 PM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -11,7 +11,80 @@
       "icon": "🎒",
       "avatar": "images/sreedyuti.jpg",
       "theme": "purple",
-      "entries": []
+      "entries": [
+        {
+          "subject": "CHEMISTRY",
+          "type": "Classwork",
+          "teacher": "GAYATHRI DEVI R",
+          "topic": "Notes",
+          "description": "Completion of work book notes",
+          "created_at": "02:52 PM"
+        },
+        {
+          "subject": "CHEMISTRY",
+          "type": "Homework",
+          "teacher": "GAYATHRI DEVI R",
+          "topic": "Notes",
+          "description": "Read the chapter Journey through states of water",
+          "created_at": "02:52 PM"
+        },
+        {
+          "subject": "CHEMISTRY",
+          "type": "Homework",
+          "teacher": "SUBINA A K",
+          "topic": "Hindi R2",
+          "description": "सत्रिया और बिहू( व्याख्या की गई)",
+          "created_at": "03:45 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Classwork",
+          "teacher": "PRASUNA DESABHOTLA",
+          "topic": "Fractions",
+          "description": "Textbook pg 158,160 figure it out done.",
+          "created_at": "01:33 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Homework",
+          "teacher": "PRASUNA DESABHOTLA",
+          "topic": "Fractions",
+          "description": "Workbook pg 32 of fractions chapter.",
+          "created_at": "01:33 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "MAHALINGAPPAGARI MADHAVI",
+          "topic": "R2 Telugu",
+          "description": "Explained workbook part lesson 7",
+          "created_at": "10:32 AM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Homework",
+          "teacher": "MAHALINGAPPAGARI MADHAVI",
+          "topic": "R2 Telugu",
+          "description": "Complete page num 22",
+          "created_at": "10:32 AM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Classwork",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "Grassroots Democracy Part II",
+          "description": "Mcqs and Very Short Answers was done in the class.",
+          "created_at": "01:57 PM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Homework",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "Grassroots Democracy Part II",
+          "description": "Learn Define the following of Chapter 1.",
+          "created_at": "01:57 PM"
+        }
+      ]
     },
     {
       "key": "sreekriti",
@@ -21,7 +94,88 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": []
+      "entries": [
+        {
+          "subject": "General",
+          "type": "Homework",
+          "teacher": "RASHMI NOWLAKHA",
+          "topic": "Hindi R2",
+          "description": "Hindi R2 - classwork- workbook page number 45, 46, 47 done.\nHomework- dear students kindly complete your workbook till page no. 47. and textbook till page no. 38 bit no.1  ( Those who completed kindly ignore )",
+          "created_at": "03:20 PM"
+        },
+        {
+          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
+          "type": "Classwork",
+          "teacher": "VIMALA V",
+          "topic": "",
+          "description": "",
+          "created_at": "04:11 PM"
+        },
+        {
+          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
+          "type": "Homework",
+          "teacher": "VIMALA V",
+          "topic": "",
+          "description": "Dear Students,\nPractise ScratchJr programs, Kindly click on the link to check the\nactivities-https://drive.google.com/drive/folders/1kBDjKWhWm5r3Okdn-F-zh8DbshM1-hHh?usp=drive_link",
+          "created_at": "04:11 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Fun with Numbers",
+          "description": "Completed wb Pg no 23-25",
+          "created_at": "02:39 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Homework",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "Fun with Numbers",
+          "description": "Complete wb Pg no 26-30 tillbit 9 ( donot do bit 10)",
+          "created_at": "02:39 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "A visit to the farm",
+          "description": "Completed wb Pg no 17",
+          "created_at": "02:38 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu R2",
+          "description": "Workbook pg no: 16,17 and 18 done.",
+          "created_at": "03:31 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Homework",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu R2",
+          "description": "",
+          "created_at": "03:31 PM"
+        },
+        {
+          "subject": "R3 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu R3",
+          "description": "Workbook pg no: 14, 15 done.",
+          "created_at": "03:41 PM"
+        },
+        {
+          "subject": "R3 - TELUGU/HINDI",
+          "type": "Homework",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu R3",
+          "description": "Complete Workbook pg no: 16",
+          "created_at": "03:41 PM"
+        }
+      ]
     }
   ]
 }
