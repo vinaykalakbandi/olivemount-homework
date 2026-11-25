@@ -1,7 +1,7 @@
 {
-  "date": "Wednesday, November 25, 2026",
-  "date_iso": "2026-11-25",
-  "last_updated": "25 Nov 2026, 05:11 PM IST",
+  "date": "Thursday, November 26, 2026",
+  "date_iso": "2026-11-26",
+  "last_updated": "26 Nov 2026, 02:07 AM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -11,112 +11,7 @@
       "icon": "🎒",
       "avatar": "images/sreedyuti.jpg",
       "theme": "purple",
-      "entries": [
-        {
-          "subject": "CHEMISTRY",
-          "type": "Classwork",
-          "teacher": "GAYATHRI DEVI R",
-          "topic": "",
-          "description": "Completion of work book notes",
-          "created_at": "02:53 PM"
-        },
-        {
-          "subject": "CHEMISTRY",
-          "type": "Homework",
-          "teacher": "GAYATHRI DEVI R",
-          "topic": "",
-          "description": "Draw and label water cycle in work book",
-          "created_at": "02:53 PM"
-        },
-        {
-          "subject": "CHEMISTRY",
-          "type": "Homework",
-          "teacher": "SUBINA A K",
-          "topic": "Hindi R2",
-          "description": "सत्रिया और बिहू ( व्याख्या की गई)",
-          "created_at": "03:46 PM"
-        },
-        {
-          "subject": "CHEMISTRY",
-          "type": "Homework",
-          "teacher": "DAISY JAIRAJ",
-          "topic": "HINDI R3-पाठ - तेनालीराम",
-          "description": "CW-Reading and explanation\nHW- Please learn  and write विलोम , पर्यायवाची and शब्दार्थ from पाठ-टेनलीराम in the notebook",
-          "created_at": "02:33 PM"
-        },
-        {
-          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
-          "type": "Classwork",
-          "teacher": "MADHURIMA YERRAPRAGADA",
-          "topic": "",
-          "description": "Explained Internal CSS and External CSS with suitable examples, demonstrated how to insert images in HTML, and conducted a quiz on HTML and CSS.",
-          "created_at": "03:58 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Classwork",
-          "teacher": "PRASUNA DESABHOTLA",
-          "topic": "Fractions",
-          "description": "Mixed fractions as sum of whole and a proper fraction",
-          "created_at": "02:31 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Homework",
-          "teacher": "PRASUNA DESABHOTLA",
-          "topic": "Fractions",
-          "description": "Fractions textbook pg 162 figure it out 1 and 2 problems",
-          "created_at": "02:31 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Classwork",
-          "teacher": "ANSHA HIBA K M",
-          "topic": "ENGLISH",
-          "description": "Letter Writing\nInformal Letter",
-          "created_at": "03:47 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Homework",
-          "teacher": "ANSHA HIBA K M",
-          "topic": "ENGLISH",
-          "description": "CB- Eat from the Edges Life Skill Qn no 2",
-          "created_at": "03:47 PM"
-        },
-        {
-          "subject": "R3 - TELUGU/HINDI",
-          "type": "Classwork",
-          "teacher": "PRIYANKA REDDY LINGAREDDY",
-          "topic": "R3 Telugu",
-          "description": "Did Ls.7.worksheet",
-          "created_at": "03:58 PM"
-        },
-        {
-          "subject": "R3 - TELUGU/HINDI",
-          "type": "Homework",
-          "teacher": "PRIYANKA REDDY LINGAREDDY",
-          "topic": "R3 Telugu",
-          "description": "Complete the workbook till pg.no 29",
-          "created_at": "03:58 PM"
-        },
-        {
-          "subject": "SOCIAL SCIENCE",
-          "type": "Classwork",
-          "teacher": "UTKARSHA SRIVASTAVA",
-          "topic": "Grassroots Democracy Part II",
-          "description": "Completed Short Answers and one long answer.",
-          "created_at": "01:38 PM"
-        },
-        {
-          "subject": "SOCIAL SCIENCE",
-          "type": "Homework",
-          "teacher": "UTKARSHA SRIVASTAVA",
-          "topic": "Grassroots Democracy Part II",
-          "description": "Complete Page No. 62 and 63 of your workbook.\nLearn Short Answers No. 1  of the chapter landforms and Life.",
-          "created_at": "01:38 PM"
-        }
-      ]
+      "entries": []
     },
     {
       "key": "sreekriti",
@@ -126,64 +21,7 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": [
-        {
-          "subject": "EVS",
-          "type": "Classwork",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "Plants and around me",
-          "description": "completed wb pg no 18-20",
-          "created_at": "12:57 PM"
-        },
-        {
-          "subject": "EVS",
-          "type": "Homework",
-          "teacher": "RASHMI NOWLAKHA",
-          "topic": "Hindi R2",
-          "description": "Classwork- Period 1- workbook page number 48, 49 done.\nPeriod 2- workbook page number 50, 51 done.",
-          "created_at": "03:14 PM"
-        },
-        {
-          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
-          "type": "Classwork",
-          "teacher": "VIMALA V",
-          "topic": "",
-          "description": "Studetns Practised making a simple animations (Moving Fishes Inside the Sea, Dancing Party) using ScratchJr coding platform.",
-          "created_at": "03:34 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Classwork",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "Fun with Numbers",
-          "description": "Completed wb pg no 30-32",
-          "created_at": "12:55 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Homework",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "Fun with Numbers",
-          "description": "complete any work incomplete in the workbook from pg 3-32( if everything completed kindly ignore)",
-          "created_at": "12:55 PM"
-        },
-        {
-          "subject": "R2 - TELUGU/HINDI",
-          "type": "Classwork",
-          "teacher": "VIJAYA KUMARI MEDAPATI",
-          "topic": "Telugu R2",
-          "description": "Workbook pg no:32, 33 done.",
-          "created_at": "03:58 PM"
-        },
-        {
-          "subject": "R2 - TELUGU/HINDI",
-          "type": "Homework",
-          "teacher": "VIJAYA KUMARI MEDAPATI",
-          "topic": "Telugu R2",
-          "description": "Complete Workbook pg no: 34",
-          "created_at": "03:58 PM"
-        }
-      ]
+      "entries": []
     }
   ]
 }
