@@ -1,7 +1,7 @@
 {
-  "date": "Thursday, November 26, 2026",
-  "date_iso": "2026-11-26",
-  "last_updated": "26 Nov 2026, 05:10 PM IST",
+  "date": "Friday, November 27, 2026",
+  "date_iso": "2026-11-27",
+  "last_updated": "27 Nov 2026, 02:00 AM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -11,64 +11,7 @@
       "icon": "🎒",
       "avatar": "images/sreedyuti.jpg",
       "theme": "purple",
-      "entries": [
-        {
-          "subject": "General",
-          "type": "Homework",
-          "teacher": "SUBINA A K",
-          "topic": "Hindi R2",
-          "description": "CW  पाठ-8 सत्रिया और बिहू पठन व व्याख्या",
-          "created_at": "03:53 PM"
-        },
-        {
-          "subject": "PHYSICS",
-          "type": "Classwork",
-          "teacher": "HYMAVATHI TALLAPUDI",
-          "topic": "PHYSICS",
-          "description": "Explained the line graph, notes discussed in the class.",
-          "created_at": "03:35 PM"
-        },
-        {
-          "subject": "PHYSICS",
-          "type": "Homework",
-          "teacher": "HYMAVATHI TALLAPUDI",
-          "topic": "PHYSICS",
-          "description": "Complete the task skill based activities and science quest from the workbook.",
-          "created_at": "03:35 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Classwork",
-          "teacher": "ANSHA HIBA K M",
-          "topic": "English",
-          "description": "Notes- Formal Letter\nWB exercises",
-          "created_at": "04:15 PM"
-        },
-        {
-          "subject": "R2 - TELUGU/HINDI",
-          "type": "Classwork",
-          "teacher": "MAHALINGAPPAGARI MADHAVI",
-          "topic": "R2 Telugu",
-          "description": "Completed lesson 7 worksheet",
-          "created_at": "04:53 PM"
-        },
-        {
-          "subject": "R2 - TELUGU/HINDI",
-          "type": "Homework",
-          "teacher": "MAHALINGAPPAGARI MADHAVI",
-          "topic": "R2 Telugu",
-          "description": "Dear students\nPlease Complete the incomplete work in lesson 6,7",
-          "created_at": "04:53 PM"
-        },
-        {
-          "subject": "SOCIAL SCIENCE",
-          "type": "Classwork",
-          "teacher": "UTKARSHA SRIVASTAVA",
-          "topic": "Grassroots Democracy Part II",
-          "description": "Students completed Long Answers, Source Based and Image based in the class.",
-          "created_at": "02:50 PM"
-        }
-      ]
+      "entries": []
     },
     {
       "key": "sreekriti",
@@ -78,64 +21,7 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": [
-        {
-          "subject": "General",
-          "type": "Homework",
-          "teacher": "RASHMI NOWLAKHA",
-          "topic": "Hindi R2",
-          "description": "Hindi R2 -\nClass work- workbook page no. 52, 53, 54 done.\nHomework- Read and write workbook page no. 55",
-          "created_at": "03:07 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Classwork",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "Fun with Numbers",
-          "description": "Completed wbPg no 33-35",
-          "created_at": "01:45 PM"
-        },
-        {
-          "subject": "MATHEMATICS",
-          "type": "Homework",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "Fun with Numbers",
-          "description": "Complete wb Pg no 36 ( students having pending work kindly complete it.",
-          "created_at": "01:45 PM"
-        },
-        {
-          "subject": "R1 - ENGLISH",
-          "type": "Classwork",
-          "teacher": "NAKSHENDRA SONTHALIA",
-          "topic": "Olivocab",
-          "description": "Writen olivocab words in the notebook.",
-          "created_at": "01:44 PM"
-        },
-        {
-          "subject": "R2 - TELUGU/HINDI",
-          "type": "Classwork",
-          "teacher": "VIJAYA KUMARI MEDAPATI",
-          "topic": "Telugu R2",
-          "description": "Textbook pg no:47, 48, 49 done.",
-          "created_at": "03:31 PM"
-        },
-        {
-          "subject": "R3 - TELUGU/HINDI",
-          "type": "Classwork",
-          "teacher": "VIJAYA KUMARI MEDAPATI",
-          "topic": "Telugu R3",
-          "description": "Workbook pg no: 19, 20 done.",
-          "created_at": "03:37 PM"
-        },
-        {
-          "subject": "R3 - TELUGU/HINDI",
-          "type": "Homework",
-          "teacher": "VIJAYA KUMARI MEDAPATI",
-          "topic": "Telugu R3",
-          "description": "Telugu R3 H/W\nComplete Workbook pg no: 23.",
-          "created_at": "03:37 PM"
-        }
-      ]
+      "entries": []
     }
   ]
 }
