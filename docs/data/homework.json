@@ -1,7 +1,7 @@
 {
   "date": "Friday, November 27, 2026",
   "date_iso": "2026-11-27",
-  "last_updated": "27 Nov 2026, 03:15 AM IST",
+  "last_updated": "27 Nov 2026, 05:10 PM IST",
   "students": [
     {
       "key": "sreedyuti",
@@ -11,7 +11,64 @@
       "icon": "🎒",
       "avatar": "images/sreedyuti.jpg",
       "theme": "purple",
-      "entries": []
+      "entries": [
+        {
+          "subject": "General",
+          "type": "Homework",
+          "teacher": "SUBINA A K",
+          "topic": "Hindi R2",
+          "description": "सत्रिया और बिहू नृत्य ( पठन व व्याख्या)",
+          "created_at": "04:03 PM"
+        },
+        {
+          "subject": "INFORMATION & COMMUNICATION TECHNOLOGY",
+          "type": "Classwork",
+          "teacher": "MADHURIMA YERRAPRAGADA",
+          "topic": "Lab Activity:",
+          "description": "Students practiced Internal CSS by creating a webpage on “Water Conservation” by applying different CSS properties to style the webpage.",
+          "created_at": "02:25 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "English",
+          "description": "Ls- Two Brothers and the Gold (Supplementary)",
+          "created_at": "04:01 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Homework",
+          "teacher": "ANSHA HIBA K M",
+          "topic": "English",
+          "description": "WB- pg no: 84 (Formal Letter)",
+          "created_at": "04:01 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "MAHALINGAPPAGARI MADHAVI",
+          "topic": "R2 Telugu",
+          "description": "Completing incomplete works",
+          "created_at": "03:41 PM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Classwork",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "Grassroots Democracy Part III",
+          "description": "Mcqs, Very Short Answer and Short Answers were done in the class.",
+          "created_at": "03:42 PM"
+        },
+        {
+          "subject": "SOCIAL SCIENCE",
+          "type": "Homework",
+          "teacher": "UTKARSHA SRIVASTAVA",
+          "topic": "Grassroots Democracy Part III",
+          "description": "Complete image based of the chapter Grassroots Democracy Part III of your workbook.\nNote\n: Prepare Answer the following in 30 words of the chapter Landforms and Life and mcqs of P.T. 2 Revision Worksheet for slip test on Monday.",
+          "created_at": "03:42 PM"
+        }
+      ]
     },
     {
       "key": "sreekriti",
@@ -21,7 +78,56 @@
       "icon": "🎨",
       "avatar": "images/sreekriti.jpg",
       "theme": "pink",
-      "entries": []
+      "entries": [
+        {
+          "subject": "General",
+          "type": "Homework",
+          "teacher": "RASHMI NOWLAKHA",
+          "topic": "Hindi R2",
+          "description": "Classwork- workbook page number 56, 57 explained.  Textbook page number 40, 41 tracing done.\nHomework- complete textbook page number 38 bit number 2  and page number 42",
+          "created_at": "03:28 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "",
+          "description": "Completed wb Pg no 37-41,43 and 45",
+          "created_at": "01:18 PM"
+        },
+        {
+          "subject": "MATHEMATICS",
+          "type": "Homework",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "",
+          "description": "Complete wb Pg no 42 and kindly check if any oending work is there till Pg 43.\nLearn number names 1-100 for test on friday.",
+          "created_at": "01:18 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Classwork",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "",
+          "description": "Completed writing words for the week in notebook.",
+          "created_at": "01:18 PM"
+        },
+        {
+          "subject": "R1 - ENGLISH",
+          "type": "Homework",
+          "teacher": "NAKSHENDRA SONTHALIA",
+          "topic": "",
+          "description": "Learn the lines given for english exhibition( child should also learn the lines where it is mentioned all students, including there lines)",
+          "created_at": "01:18 PM"
+        },
+        {
+          "subject": "R2 - TELUGU/HINDI",
+          "type": "Classwork",
+          "teacher": "VIJAYA KUMARI MEDAPATI",
+          "topic": "Telugu R2",
+          "description": "Workbook pg no: 38, 39 done.",
+          "created_at": "03:22 PM"
+        }
+      ]
     }
   ]
 }
